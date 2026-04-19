@@ -14,18 +14,18 @@ Commands do not behave consistently.
 
 The same command can produce different results across machines, environments, or time.
 
-Logs are incomplete.
-Debuggers do not capture environment drift.
+Logs are incomplete.  
+Debuggers do not capture environment drift.  
 CI systems hide nondeterminism instead of explaining it.
 
 Reproducibility is broken in practice.
 
 AION exists to make execution behavior:
 
-* visible
-* comparable
-* explainable
-* reproducible
+* visible  
+* comparable  
+* explainable  
+* reproducible  
 
 ---
 
@@ -35,11 +35,11 @@ AION is a system for deterministic execution analysis.
 
 It is composed of multiple surfaces:
 
-* Repro — deterministic capture, diff, why, replay
-* Graph — execution relationships and causality (future)
-* Envelope — deterministic execution contracts (future)
-* Trace — event-based execution recording (future)
-* Inspect — execution introspection (future)
+* Repro — deterministic capture, diff, why, replay  
+* Graph — execution relationships and causality (future)  
+* Envelope — deterministic execution contracts (future)  
+* Trace — event-based execution recording (future)  
+* Inspect — execution introspection (future)  
 
 Repro is the first available surface.
 
@@ -51,6 +51,8 @@ Repro is the first available surface.
 aion repro run -- echo hello
 aion repro diff last prev
 aion repro why last prev
+```
+
 AION captures executions, compares them, and explains the difference.
 
 What you get
@@ -67,15 +69,20 @@ Artifacts are stored locally under ./repro_runs/.
 Installation
 From the repository root:
 
-bash
+```bash
 cargo build --release -p aion -p repro
 export PATH="$PWD/target/release:$PATH"
+```
+
 Quickstart
-bash
+
+```bash
 aion repro run -- echo hello
 aion repro replay last
 aion repro diff last prev
 aion repro why last prev
+```
+
 Examples
 Runnable examples are available in:
 

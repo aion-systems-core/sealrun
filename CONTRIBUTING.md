@@ -1,71 +1,90 @@
-Contributing to AION
+# Contributing to AION
+
 AION is a deterministic system.
 
 All contributions must preserve determinism.
 
-Principles
-Execution must be reproducible
+---
 
-Behavior must be explainable
+## Principles
 
-Outputs must be stable
+* Execution must be reproducible  
+* Behavior must be explainable  
+* Outputs must be stable  
+* Tests must be deterministic  
 
-Tests must be deterministic
+---
 
-Commit rules
+## Commit rules
+
 Every commit must:
 
-produce the same results when executed multiple times
+* produce the same results when executed multiple times  
+* avoid nondeterministic behavior  
+* avoid time-based or random outputs unless explicitly controlled  
 
-avoid nondeterministic behavior
+---
 
-avoid time-based or random outputs unless explicitly controlled
+## Testing rules
 
-Testing rules
 All tests must:
 
-pass deterministically
-
-not depend on external state
-
-not depend on system time or randomness
+* pass deterministically  
+* not depend on external state  
+* not depend on system time or randomness  
 
 Run:
 
-bash
+```bash
 cargo test -p repro
+```
+
 before submitting changes.
 
-Repro validation
+---
+
+## Repro validation
+
 Changes must not introduce execution drift.
 
 Recommended validation:
 
-bash
+```bash
 aion repro run -- cargo test -p repro
 aion repro run -- cargo test -p repro
 aion repro diff last prev
+```
+
 The diff must not show unintended differences.
 
-Review expectations
+---
+
+## Review expectations
+
 Reviewers will check:
 
-deterministic behavior
+* deterministic behavior
 
-absence of drift
+* absence of drift
 
-clarity of execution changes
+* clarity of execution changes
 
-Scope
+---
+
+## Scope
+
 Public-facing changes should:
 
-use aion repro ... in examples
+* use aion repro ... in examples
 
-avoid internal terminology
+* avoid internal terminology
 
-remain consistent with README.md
+* remain consistent with README.md
 
-Releases
+---
+
+## Releases
+
 Releases represent stable, reproducible states.
 
 Do not introduce nondeterminism before tagging a release.
