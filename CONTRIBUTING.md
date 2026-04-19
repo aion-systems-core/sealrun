@@ -1,5 +1,13 @@
 # Contributing to AION
 
+AION is **source-first** today: build from this repository with Cargo. Prebuilt binaries may be published later; until then, treat `cargo build --release -p aion -p repro` as the supported install path.
+
+## Project Identity
+
+**AION** is the stable product name. The public slogan is:
+
+**AION — Make Execution Explainable.**
+
 AION is a deterministic system.
 
 All contributions must preserve determinism.
