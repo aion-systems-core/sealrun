@@ -4,7 +4,7 @@ AION is a deterministic execution truth layer for debugging, comparison, and rep
 
 It captures what actually happened during a command, compares executions deterministically, and explains why they differ.
 
-If you have ever seen the same command succeed once and fail the next time — AION makes the difference visible.
+If the same command behaves differently across machines, environments, or time — AION makes the difference visible.
 
 ---
 
@@ -51,8 +51,6 @@ Repro is the first available surface.
 aion repro run -- echo hello
 aion repro diff last prev
 aion repro why last prev
-```
-
 AION captures executions, compares them, and explains the difference.
 
 What you get
@@ -69,20 +67,15 @@ Artifacts are stored locally under ./repro_runs/.
 Installation
 From the repository root:
 
-```bash
+bash
 cargo build --release -p aion -p repro
 export PATH="$PWD/target/release:$PATH"
-```
-
 Quickstart
-
-```bash
+bash
 aion repro run -- echo hello
 aion repro replay last
 aion repro diff last prev
 aion repro why last prev
-```
-
 Examples
 Runnable examples are available in:
 
