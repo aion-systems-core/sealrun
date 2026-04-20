@@ -1,157 +1,61 @@
-# AION
+# AION — Deterministic Execution OS
 
-AION — Make Execution Explainable.
+AION is a deterministic Execution-OS for CI/CD, developer workflows, and enterprise automation.  
+This public repository contains tooling only. The kernel is private (`aion-kernel`).
 
-Deterministic execution debugging for reproducible systems.
+## Repository split
 
-Capabilities: capture, diff, explain, and replay stored runs.
+- Private repository: `aion-kernel`
+- Public repository: `aion` (this repo)
 
-AION is a deterministic execution truth layer for debugging, comparison, and reproducible automation.
+## Public architecture
 
-It captures what actually happened during a command, compares executions deterministically, and explains why they differ.
+AION OS
+|
+|-- aion-kernel (private)
+|     |-- run_execute(spec)
+|     |-- run_diff(a, b)
+|     |-- run_store(path, artifact)
+|     `-- run_load(path)
+|
+|-- aion-repro (public tool)
+|     |-- capture
+|     |-- replay/diff/why
+|     `-- C-ABI kernel client
+|
+|-- aion-guard (public tool)
+|     |-- baseline record/check
+|     |-- deterministic CI exit codes
+|     `-- C-ABI kernel client
+|
+`-- aion-cli (public router)
+      `-- routes to aion-repro / aion-guard
 
-If the same command behaves differently across machines, environments, or time - AION makes the difference visible.
+## FFI boundary
 
-## About
+Public tools load the private kernel dynamically and call only:
 
-Suggested GitHub topics for this repository:
+- `run_execute(spec)`
+- `run_diff(a, b)`
+- `run_store(path, artifact)`
+- `run_load(path)`
 
-`determinism`, `reproducibility`, `devops`, `command-line`, `observability`, `ci-cd`, `debugging`, `rust`, `cli`, `diff-tool`, `testing-tools`
+Kernel loading uses:
 
----
+- `dlopen` / `dlsym` on Unix-like systems
+- `LoadLibrary` / `GetProcAddress` on Windows
 
-## Why AION exists
+If the kernel library is unavailable, tools fail with:
 
-Commands do not behave consistently.
+`AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.`
 
-The same command can produce different results across machines, environments, or time.
-
-Logs are incomplete.
-
-Debuggers do not capture environment drift.
-
-CI systems hide nondeterminism instead of explaining it.
-
-Reproducibility is broken in practice.
-
-AION exists to make execution behavior:
-
-* visible
-* comparable
-* explainable
-* reproducible
-
-## What AION is
-
-AION is a system for deterministic execution analysis.
-
-It is composed of multiple surfaces:
-
-* Repro — deterministic capture, diff, why, replay
-* Graph — execution relationships and causality (future)
-* Envelope — deterministic execution contracts (future)
-* Trace — event-based execution recording (future)
-* Inspect — execution introspection (future)
-
-Repro is the first available surface.
-
-## 5-second proof
+## Build
 
 ```bash
-aion repro run -- echo hello
-aion repro diff last prev
-aion repro why last prev
+cargo build --workspace --release
 ```
 
-## What you get
+## Tool READMEs
 
-* Capture — see exactly what happened during a run
-* Compare — see what changed between runs
-* Explain — understand why it changed
-* Replay — reproduce output without re-running
-
-Artifacts are stored locally under `./repro_runs/`.
-
-## Installation
-
-From the repository root:
-
-```bash
-cargo build --release -p aion -p repro
-export PATH="$PWD/target/release:$PATH"
-```
-
-## Quickstart
-
-```bash
-aion repro run -- echo hello
-aion repro replay last
-aion repro diff last prev
-aion repro why last prev
-```
-
-## Examples
-
-Runnable examples are available in:
-
-* examples/basic_run.sh
-* examples/diff_example.sh
-* examples/why_analysis.sh
-
-## CI Integration Examples
-
-These examples use only the currently available AION CLI commands.
-
-### GitHub Actions Example
-
-```yaml
-- name: Install AION
-  run: cargo install --git https://github.com/aion-systems-core/aion
-
-- name: Capture baseline (main)
-  run: aion repro run -- ./scripts/build.sh
-
-- name: Capture current (PR)
-  run: aion repro run -- ./scripts/build.sh
-
-- name: Compare outputs
-  run: aion repro diff last prev
-```
-
-### Local Debugging Example
-
-```bash
-# Capture your environment
-aion repro run -- python train.py
-
-# Capture colleague's environment (manually shared JSON)
-# Save it under repro_runs/<id>.json
-# Then compare:
-aion repro diff last prev
-aion repro why last prev
-```
-
-### Reproducible Benchmarking Example
-
-```bash
-for i in {1..5}; do
-    aion repro run -- ./benchmark --iterations 1000
-done
-
-# Compare the last two runs
-aion repro diff last prev
-```
-
-## Release
-
-See RELEASE.md for version information and changes.
-
-## Contributing
-
-See CONTRIBUTING.md.
-
----
-
-## License
-
-MIT
+- [`crates/aion-repro/README.md`](crates/aion-repro/README.md)
+- [`crates/aion-guard/README.md`](crates/aion-guard/README.md)

@@ -1,0 +1,17 @@
+[package]
+name = "aion-cli"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "aion_cli"
+path = "src/lib.rs"
+
+[[bin]]
+name = "aion"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+libloading = "0.8"
+serde_json = { version = "1", features = ["preserve_order"] }

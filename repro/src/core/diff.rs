@@ -9,6 +9,8 @@
 use crate::core::artifact::{ExecutionArtifact, ReproRun};
 use crate::core::causal_graph::CausalGraph;
 use crate::core::execution_trace::ExecutionTrace;
+use aion_core::diff::{diff as core_diff, DiffOptions};
+use aion_core::run::{sha256_prefixed, RunResult};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeSet;
 
@@ -150,34 +152,55 @@ pub fn diff_environment(a: &ExecutionArtifact, b: &ExecutionArtifact) -> Vec<Fie
 }
 
 pub fn diff_execution(a: &ExecutionArtifact, b: &ExecutionArtifact) -> Vec<FieldDiff> {
+    let baseline = RunResult {
+        stdout: a.stdout.clone(),
+        stdout_hash: sha256_prefixed(&a.stdout),
+        stderr: a.stderr.clone(),
+        stderr_hash: sha256_prefixed(&a.stderr),
+        exit_code: a.exit_code,
+        duration_ms: a.duration_ms,
+    };
+    let actual = RunResult {
+        stdout: b.stdout.clone(),
+        stdout_hash: sha256_prefixed(&b.stdout),
+        stderr: b.stderr.clone(),
+        stderr_hash: sha256_prefixed(&b.stderr),
+        exit_code: b.exit_code,
+        duration_ms: b.duration_ms,
+    };
+    let core = core_diff(
+        &baseline,
+        &actual,
+        &DiffOptions {
+            ignore_duration: false,
+            duration_tolerance: 0.0,
+        },
+    );
     let mut v = Vec::new();
-    if a.stdout != b.stdout {
-        v.push(FieldDiff {
-            field: "stdout".to_string(),
-            a: a.stdout.clone(),
-            b: b.stdout.clone(),
-        });
-    }
-    if a.stderr != b.stderr {
-        v.push(FieldDiff {
-            field: "stderr".to_string(),
-            a: a.stderr.clone(),
-            b: b.stderr.clone(),
-        });
-    }
-    if a.exit_code != b.exit_code {
-        v.push(FieldDiff {
-            field: "exit_code".to_string(),
-            a: a.exit_code.to_string(),
-            b: b.exit_code.to_string(),
-        });
-    }
-    if a.duration_ms != b.duration_ms {
-        v.push(FieldDiff {
-            field: "duration_ms".to_string(),
-            a: a.duration_ms.to_string(),
-            b: b.duration_ms.to_string(),
-        });
+    for field in core.fields {
+        match field.field.as_str() {
+            "stdout" => v.push(FieldDiff {
+                field: "stdout".to_string(),
+                a: a.stdout.clone(),
+                b: b.stdout.clone(),
+            }),
+            "stderr" => v.push(FieldDiff {
+                field: "stderr".to_string(),
+                a: a.stderr.clone(),
+                b: b.stderr.clone(),
+            }),
+            "exit_code" => v.push(FieldDiff {
+                field: "exit_code".to_string(),
+                a: a.exit_code.to_string(),
+                b: b.exit_code.to_string(),
+            }),
+            "duration_ms" => v.push(FieldDiff {
+                field: "duration_ms".to_string(),
+                a: a.duration_ms.to_string(),
+                b: b.duration_ms.to_string(),
+            }),
+            _ => {}
+        }
     }
     v
 }

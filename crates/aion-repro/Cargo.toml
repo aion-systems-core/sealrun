@@ -1,0 +1,13 @@
+[package]
+name = "aion-repro"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "aion-repro"
+path = "src/main.rs"
+
+[dependencies]
+aion-cli = { path = "../aion-cli" }
+clap = { version = "4", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }

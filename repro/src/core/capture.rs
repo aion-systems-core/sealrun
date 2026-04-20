@@ -12,8 +12,7 @@ use crate::core::execution_boundary::{
     assert_exposure_budget, capture_env_snapshot_15, capture_process_environment_full,
 };
 use crate::core::execution_trace::{ExecutionEvent, ExecutionTrace};
-use std::io;
-use std::process::{Command, Stdio};
+use aion_core::run::{execute as execute_run, RunSpec};
 use std::time::Instant;
 
 /// Source of timestamps. Real runs use wall-clock; tests inject a fixed clock.
@@ -123,8 +122,8 @@ pub fn capture_command_real_with_clock(
         .chain(args.iter().cloned())
         .collect();
 
-    let start = Instant::now();
     let (stdout, stderr, exit_code, duration_ms) = if program.is_empty() {
+        let start = Instant::now();
         (
             String::new(),
             "empty program".to_string(),
@@ -132,14 +131,16 @@ pub fn capture_command_real_with_clock(
             start.elapsed().as_millis() as u64,
         )
     } else {
-        match run_subprocess(program, args) {
-            Ok(output) => {
-                let duration_ms = start.elapsed().as_millis() as u64;
-                let stdout =
-                    normalize_newlines(String::from_utf8_lossy(&output.stdout).into_owned());
-                let stderr =
-                    normalize_newlines(String::from_utf8_lossy(&output.stderr).into_owned());
-                let exit_code = output.status.code().unwrap_or(-1);
+        let start = Instant::now();
+        match execute_run(&RunSpec {
+            program: program.to_string(),
+            args: args.to_vec(),
+        }) {
+            Ok(result) => {
+                let stdout = result.stdout;
+                let stderr = result.stderr;
+                let exit_code = result.exit_code;
+                let duration_ms = result.duration_ms;
                 (stdout, stderr, exit_code, duration_ms)
             }
             Err(e) => {
@@ -211,49 +212,6 @@ fn split_cli_line(command: &str) -> (String, Vec<String>) {
     let program = parts[0].to_string();
     let args = parts[1..].iter().map(|s| (*s).to_string()).collect();
     (program, args)
-}
-
-/// Subprocess I/O for both local capture and the CI ledger (same semantics).
-pub(crate) fn run_subprocess(program: &str, args: &[String]) -> io::Result<std::process::Output> {
-    run_subprocess_inner(program, args)
-}
-
-#[cfg(windows)]
-fn run_subprocess_inner(program: &str, args: &[String]) -> io::Result<std::process::Output> {
-    let mut direct = Command::new(program);
-    direct.args(args);
-    direct.stdin(Stdio::null());
-    direct.stdout(Stdio::piped());
-    direct.stderr(Stdio::piped());
-    match direct.output() {
-        Ok(o) => Ok(o),
-        Err(_) if program.eq_ignore_ascii_case("echo") => {
-            // Windows: `echo` is a shell builtin — delegate to `cmd /C` (still a real child process).
-            let mut c = Command::new("cmd.exe");
-            c.arg("/C");
-            c.arg(program);
-            c.args(args);
-            c.stdin(Stdio::null());
-            c.stdout(Stdio::piped());
-            c.stderr(Stdio::piped());
-            c.output()
-        }
-        Err(e) => Err(e),
-    }
-}
-
-#[cfg(not(windows))]
-fn run_subprocess_inner(program: &str, args: &[String]) -> io::Result<std::process::Output> {
-    Command::new(program)
-        .args(args)
-        .stdin(Stdio::null())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped())
-        .output()
-}
-
-fn normalize_newlines(s: String) -> String {
-    s.replace("\r\n", "\n").replace('\r', "\n")
 }
 
 #[cfg(test)]
