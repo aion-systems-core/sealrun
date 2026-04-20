@@ -1,38 +1,59 @@
-# AION Repro â€” Deterministic Run Capture & Replay
+# aion-repro — Deterministic Run Capture & Replay
 
-AION Repro records command execution deterministically and provides replay/diff/why workflows through the private kernel.
+`aion-repro` provides deterministic run capture, replay, diff, and why-analysis.  
+It freezes command execution into reproducible artifacts and allows replay without re-running the original command.
 
-## Kernel boundary
+---
 
-Repro contains no kernel implementation.
-Repro loads the private `aion-kernel` dynamically and uses only:
+## Features
 
-- `run_execute(spec)`
-- `run_diff(a, b)`
-- `run_store(path, artifact)`
-- `run_load(path)`
+- Deterministic run capture  
+- Replay without executing the command again  
+- Diff (stdout, stderr, exit code)  
+- Why-analysis for understanding differences  
+- Reproducible artifacts for debugging and audits  
 
-If the kernel cannot be loaded, Repro exits with:
+---
 
-`AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.`
+## Usage
 
-## Commands
+Capture a run:
 
-```bash
-aion-repro run -- echo hello
-aion-repro replay repro_runs/last.json
-aion-repro diff repro_runs/a.json repro_runs/b.json
-aion-repro why repro_runs/a.json repro_runs/b.json
-```
+aion repro run -- echo "hello"
 
-## Exit codes
+Code
 
-- `0`: success
-- `2`: runtime/configuration error
+Replay a previous run:
 
-## Data path
+aion repro replay <id>
 
-Artifact persistence is delegated to kernel APIs:
+Code
 
-- `run_store(path, artifact)`
-- `run_load(path)`
+Diff two runs:
+
+aion repro diff <id-a> <id-b>
+
+Code
+
+Why-analysis:
+
+aion repro why <id-a> <id-b>
+
+Code
+
+---
+
+## Kernel Boundary
+
+`aion-repro` dynamically loads the AION Execution Kernel at runtime.  
+If the kernel is missing:
+
+AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.
+
+Code
+
+---
+
+## License
+
+MIT

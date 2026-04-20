@@ -1,11 +1,11 @@
-# AION â€” Deterministic Execution Tools
+# AION — Deterministic Execution Tools
 
 AION provides deterministic execution tools for CI/CD, debugging, and automation.  
 This repository contains the public AION tooling:
 
-- **aion-repro** â€” deterministic run capture, replay, diff, and why-analysis  
-- **aion-guard** â€” deterministic CI drift detection  
-- **aion-cli** â€” unified command-line interface for all AION tools  
+- **aion-repro** — deterministic run capture, replay, diff, and why-analysis  
+- **aion-guard** — deterministic CI drift detection  
+- **aion-cli** — unified command-line interface for all AION tools  
 
 AION tools run on top of the AION Execution Kernel, which is distributed separately.
 
@@ -64,10 +64,7 @@ AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.
 
 ```
 cargo build --workspace --release
-```
-
 ---
-
 ## License
 
 MIT (tools only)

@@ -1,50 +1,53 @@
-# AION Guard â€” Deterministic CI Drift Detection
+# aion-guard — Deterministic CI Drift Detection
 
-AION Guard compares command execution against a golden baseline and returns deterministic exit codes for CI/CD pipelines.
+`aion-guard` provides deterministic drift detection for CI/CD pipelines.  
+It compares command execution against a recorded baseline and returns stable exit codes.
 
-## Kernel boundary
+---
 
-Guard contains no kernel implementation.
-Guard loads the private `aion-kernel` dynamically and uses only:
+## Features
 
-- `run_execute(spec)`
-- `run_diff(a, b)`
-- `run_store(path, artifact)`
-- `run_load(path)`
+- Baseline recording  
+- Drift detection (stdout, stderr, exit code)  
+- Optional duration tolerance  
+- Deterministic CI exit codes  
+- Reproducible, auditable comparisons  
 
-If the kernel cannot be loaded, Guard exits with:
+---
 
-`AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.`
+## Usage
 
-## Commands
+Record a baseline:
 
-```bash
-aion-guard record --cmd "echo hello"
-aion-guard check --cmd "echo hello"
-aion-guard check --cmd "echo world"
-```
+aion guard record --cmd "echo hello"
 
-## Exit codes
+Code
 
-- `0`: no drift
-- `1`: drift detected
-- `2`: runtime/configuration error (missing kernel, missing/corrupt baseline, I/O)
+Check for drift:
 
-## Drift contract
+aion guard check --cmd "echo hello"
 
-Default comparison:
+Code
 
-- `stdout`
-- `stderr`
-- `exit_code`
+Exit codes:
 
-Optional comparison:
+- `0` — no drift  
+- `1` — drift detected  
+- `2` — baseline missing or invalid  
 
-- `duration_ms` with tolerance
+---
 
-## Baseline format
+## Kernel Boundary
 
-Baseline data is owned by the kernel and accessed through:
+`aion-guard` dynamically loads the AION Execution Kernel at runtime.  
+If the kernel is missing:
 
-- `run_store(path, artifact)`
-- `run_load(path)`
+AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.
+
+Code
+
+---
+
+## License
+
+MIT
