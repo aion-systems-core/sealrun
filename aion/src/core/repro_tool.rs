@@ -19,7 +19,8 @@ impl AionTool for ReproTool {
     }
 
     fn execute(args: Vec<String>) -> Result<(), String> {
-        let chain = std::iter::once(OsString::from("repro")).chain(args.into_iter().map(OsString::from));
+        let chain =
+            std::iter::once(OsString::from("repro")).chain(args.into_iter().map(OsString::from));
         repro::cli::run_from_args_os(chain)
     }
 }

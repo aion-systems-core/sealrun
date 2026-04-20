@@ -30,10 +30,19 @@ fn events_file_matches_artifact_trace_json() {
         .args(["run", "--", "echo", "hello"])
         .output()
         .expect("spawn repro");
-    assert_eq!(out.status.code(), Some(0), "{}", String::from_utf8_lossy(&out.stderr));
+    assert_eq!(
+        out.status.code(),
+        Some(0),
+        "{}",
+        String::from_utf8_lossy(&out.stderr)
+    );
 
     let index = std::fs::read_to_string(cwd.join("repro_runs").join("INDEX")).unwrap();
-    let id = index.lines().map(str::trim).find(|l| !l.is_empty()).unwrap();
+    let id = index
+        .lines()
+        .map(str::trim)
+        .find(|l| !l.is_empty())
+        .unwrap();
     let events_path = cwd.join("repro_runs").join(format!("{id}.events.json"));
     assert!(
         events_path.exists(),
@@ -42,14 +51,18 @@ fn events_file_matches_artifact_trace_json() {
     );
 
     let loaded = event_store::load_event_stream_in(&cwd.join("repro_runs"), id).unwrap();
-    let art_json = std::fs::read_to_string(cwd.join("repro_runs").join(format!("{id}.json")))
-        .unwrap();
+    let art_json =
+        std::fs::read_to_string(cwd.join("repro_runs").join(format!("{id}.json"))).unwrap();
     let v: Value = serde_json::from_str(&art_json).unwrap();
     let trace_events = &v["trace"]["events"];
     let ev_json: Value = serde_json::to_value(&loaded.events).unwrap();
-    assert_eq!(&ev_json, trace_events, "events must match artifact.trace.events");
+    assert_eq!(
+        &ev_json, trace_events,
+        "events must match artifact.trace.events"
+    );
 
-    let body: Value = serde_json::from_str(&std::fs::read_to_string(&events_path).unwrap()).unwrap();
+    let body: Value =
+        serde_json::from_str(&std::fs::read_to_string(&events_path).unwrap()).unwrap();
     assert_eq!(
         body["schema"].as_str().unwrap_or_default(),
         EVENT_STREAM_SCHEMA_V1

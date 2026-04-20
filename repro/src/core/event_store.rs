@@ -17,7 +17,11 @@ pub struct EventStreamFile {
 
 /// Write `repro_runs/<run_id>.events.json` under the process cwd (same layout as [`crate::core::storage::runs_dir`]).
 pub fn save_event_stream(run_id: &str, trace: &ExecutionTrace) -> io::Result<()> {
-    save_event_stream_in(&PathBuf::from(crate::core::storage::RUNS_DIR), run_id, trace)
+    save_event_stream_in(
+        &PathBuf::from(crate::core::storage::RUNS_DIR),
+        run_id,
+        trace,
+    )
 }
 
 pub fn save_event_stream_in(dir: &Path, run_id: &str, trace: &ExecutionTrace) -> io::Result<()> {
@@ -66,7 +70,10 @@ pub fn load_event_stream_in(dir: &Path, run_id: &str) -> io::Result<ExecutionTra
 
 fn write_events_atomically(path: &Path, run_id: &str, bytes: &[u8]) -> io::Result<()> {
     let dir = path.parent().ok_or_else(|| {
-        io::Error::new(io::ErrorKind::InvalidInput, "event stream path has no parent")
+        io::Error::new(
+            io::ErrorKind::InvalidInput,
+            "event stream path has no parent",
+        )
     })?;
     let tmp = dir.join(format!("{run_id}.events.json.tmp"));
     {

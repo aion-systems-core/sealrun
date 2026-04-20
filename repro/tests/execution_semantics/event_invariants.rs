@@ -31,7 +31,7 @@ fn echo_hello_run_has_expected_cardinality_and_stdout_chunks() {
     assert_eq!(exits, 1, "exactly one Exit");
 
     // Vec-backed timeline: implicit ids are 0..events.len() with no gaps.
-    if let Some((last_i, _)) = ev.iter().enumerate().last() {
+    if let Some((last_i, _)) = ev.iter().enumerate().next_back() {
         assert_eq!(last_i + 1, ev.len());
     }
 

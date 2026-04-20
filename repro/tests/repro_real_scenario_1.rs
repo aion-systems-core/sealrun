@@ -121,9 +121,7 @@ fn assert_diff_names_env_var_with_values(diff: &str) {
     );
     let lower = diff.to_ascii_lowercase();
     assert!(
-        lower.contains("previous")
-            || lower.contains("was")
-            || lower.contains("epoch_a:"),
+        lower.contains("previous") || lower.contains("was") || lower.contains("epoch_a:"),
         "diff must label the epoch_a side (AION epoch labels or legacy previous/was).\n\
          ─── diff stdout ───\n{diff}"
     );
@@ -188,22 +186,16 @@ fn setup_two_run_scenario() -> (PathBuf, String, String) {
     let print_env_exe = compile_print_env(&tmp);
     let exe_for_argv = print_env_exe.to_str().expect("utf-8 temp path");
 
-    let (out1, err1, c1) = run_repro_in_dir_with_extra_env(
-        &tmp,
-        &[(VAR, "foo")],
-        &["run", "--", exe_for_argv],
-    );
+    let (out1, err1, c1) =
+        run_repro_in_dir_with_extra_env(&tmp, &[(VAR, "foo")], &["run", "--", exe_for_argv]);
     assert_eq!(c1, 0, "repro run #1 failed: {err1}\n{out1}");
     assert!(
         out1.contains("foo"),
         "first run stdout should echo captured artifact including script output `foo`:\n{out1}"
     );
 
-    let (out2, err2, c2) = run_repro_in_dir_with_extra_env(
-        &tmp,
-        &[(VAR, "bar")],
-        &["run", "--", exe_for_argv],
-    );
+    let (out2, err2, c2) =
+        run_repro_in_dir_with_extra_env(&tmp, &[(VAR, "bar")], &["run", "--", exe_for_argv]);
     assert_eq!(c2, 0, "repro run #2 failed: {err2}\n{out2}");
     assert!(
         out2.contains("bar"),

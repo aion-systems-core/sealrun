@@ -42,7 +42,9 @@ pub fn trace_path(graph: &CausalGraph, from: &str, to: &str) -> Vec<CausalNode> 
     queue.push_back(vec![from.to_string()]);
 
     while let Some(path) = queue.pop_front() {
-        let cur = path.last().expect("nonempty path");
+        let Some(cur) = path.last() else {
+            continue;
+        };
         for edge in graph.edges.iter().filter(|e| e.from == *cur) {
             if path.contains(&edge.to) {
                 continue;

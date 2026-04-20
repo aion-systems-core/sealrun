@@ -31,9 +31,7 @@ pub fn registered_tools() -> &'static [ToolEntry] {
 
 #[must_use]
 pub fn lookup_entry(tool_id: &str) -> Option<&'static ToolEntry> {
-    registered_tools()
-        .iter()
-        .find(|e| e.spec.name == tool_id)
+    registered_tools().iter().find(|e| e.spec.name == tool_id)
 }
 
 pub fn available_tool_names() -> String {

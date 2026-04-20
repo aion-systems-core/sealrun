@@ -7,9 +7,9 @@ use repro::core::capture::{
     build_execution_trace, capture_command_real_with_clock, reset_counter_for_tests, FixedClock,
     ProcessResult, CAPTURE_TEST_LOCK,
 };
-use repro::core::execution_boundary::env_resolved_trace_keys;
 use repro::core::causal_graph::build_causal_graph;
 use repro::core::causal_query::first_divergent_causal_node;
+use repro::core::execution_boundary::env_resolved_trace_keys;
 
 use std::fs;
 use std::path::PathBuf;
@@ -53,7 +53,7 @@ fn baseline_selection_prefers_last_success_same_cmd_cwd() {
         env_resolved_trace_keys(),
     );
 
-    let got = select_baseline_run(&failing, &[success.clone()]).expect("baseline");
+    let got = select_baseline_run(&failing, std::slice::from_ref(&success)).expect("baseline");
     assert_eq!(got.run_id, success.run_id);
 }
 

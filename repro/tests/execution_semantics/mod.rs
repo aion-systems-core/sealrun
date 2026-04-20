@@ -19,10 +19,12 @@ fn repro_bin() -> PathBuf {
 /// Isolated cwd under the build tree (no wall clock / randomness).
 fn scratch_dir(label: &str) -> PathBuf {
     let n = SCRATCH_SEQ.fetch_add(1, Ordering::SeqCst);
-    let base = std::env::var_os("CARGO_TARGET_TMPDIR").map(PathBuf::from).unwrap_or_else(|| {
-        PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("target")
-    });
-    let p = base.join("repro_exec_semantics").join(format!("{label}_{n}"));
+    let base = std::env::var_os("CARGO_TARGET_TMPDIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("target"));
+    let p = base
+        .join("repro_exec_semantics")
+        .join(format!("{label}_{n}"));
     std::fs::create_dir_all(&p).unwrap();
     p
 }
@@ -57,8 +59,7 @@ fn load_latest_artifact(cwd: &Path) -> ExecutionArtifact {
     let id = index
         .lines()
         .map(str::trim)
-        .filter(|l| !l.is_empty())
-        .last()
+        .rfind(|l| !l.is_empty())
         .expect("INDEX non-empty");
     let json_path = cwd.join("repro_runs").join(format!("{id}.json"));
     let json = std::fs::read_to_string(&json_path).expect("read artifact");

@@ -204,7 +204,7 @@ pub fn capture_command_with_clock(command: String, clock: &dyn Clock) -> Executi
 }
 
 fn split_cli_line(command: &str) -> (String, Vec<String>) {
-    let parts: Vec<&str> = command.trim().split_whitespace().collect();
+    let parts: Vec<&str> = command.split_whitespace().collect();
     if parts.is_empty() {
         return (String::new(), vec![]);
     }

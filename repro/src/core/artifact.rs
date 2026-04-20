@@ -42,7 +42,8 @@ pub fn deterministic_run_id(
         env,
         stdout,
     };
-    let bytes = serde_json::to_vec(&m).expect("serialize run id material");
+    // `RunIdMaterial` is strings and a `BTreeMap` of strings; `serde_json` cannot fail here.
+    let bytes = serde_json::to_vec(&m).unwrap();
     format!("{:x}", Sha256::digest(&bytes))
 }
 

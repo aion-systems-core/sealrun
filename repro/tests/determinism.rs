@@ -103,7 +103,10 @@ fn eval_output_contains_category_and_score_sections() {
 }
 
 fn repo_root_readme() -> PathBuf {
-    PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../../README.md")
+    PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .expect("repro crate manifest is under workspace root")
+        .join("README.md")
 }
 
 #[test]

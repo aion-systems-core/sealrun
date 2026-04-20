@@ -6,6 +6,15 @@ repro_runs/
 repro_ci_store/
 **/repro_ci_store/
 
+# Editor and local-only tooling (keep team-shared editor config via force-add if needed).
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+memory.json
+
 # Legacy / internal trees not part of the public 1.0.0 workspace (see root Cargo.toml).
 /cognitive_os_v14/
 /cos-v1/

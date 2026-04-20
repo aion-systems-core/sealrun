@@ -93,7 +93,8 @@ fn redact_diff_skip_timestamp_field(s: &str) -> String {
 /// time can still be compared for structural / content determinism.
 fn redact(s: &str) -> String {
     // `output::format_diff` uses U+2500 box-drawing chars, not ASCII `-`.
-    let s = if s.contains("\u{2500}\u{2500} diff \u{2500}\u{2500}") || s.contains("── AION DIFF ──") {
+    let s = if s.contains("\u{2500}\u{2500} diff \u{2500}\u{2500}") || s.contains("── AION DIFF ──")
+    {
         redact_diff_skip_timestamp_field(s)
     } else {
         s.to_string()

@@ -233,10 +233,7 @@ pub fn diff_runs_with_index(
         _ => Vec::new(),
     };
 
-    let stdout_diff = differences
-        .iter()
-        .find(|d| d.field == "stdout")
-        .cloned();
+    let stdout_diff = differences.iter().find(|d| d.field == "stdout").cloned();
 
     let causal_diff: Vec<String> = env_diff
         .iter()

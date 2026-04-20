@@ -26,11 +26,7 @@ pub fn format_artifact(a: &ExecutionArtifact) -> String {
     s.push_str(&format!("command          : {}\n", a.command));
     s.push_str(&format!("exit_code        : {}\n", a.exit_code));
     s.push_str(&format!("duration_ms      : {}\n", a.duration_ms));
-    let env_n = a
-        .repro_run
-        .as_ref()
-        .map(|r| r.env.len())
-        .unwrap_or(0);
+    let env_n = a.repro_run.as_ref().map(|r| r.env.len()).unwrap_or(0);
     s.push_str(&format!(
         "env_captured     : {} variables (full map in repro_runs/{}.json)\n",
         env_n, a.run_id
@@ -79,10 +75,7 @@ pub fn format_diff(report: &DiffReport) -> String {
         s.push_str(&format!("  epoch_a: {}\n", e.value_a));
         s.push_str(&format!("  epoch_b: {}\n", e.value_b));
         s.push_str("\n→ CAUSAL SHIFT:\n");
-        s.push_str(&format!(
-            "  {} caused execution divergence\n",
-            e.key
-        ));
+        s.push_str(&format!("  {} caused execution divergence\n", e.key));
         s.push('\n');
     }
 
@@ -156,11 +149,11 @@ pub fn format_root_cause_summary(rc: &RootCauseSummary) -> String {
     match (&rc.previous_run, &rc.primary, &rc.first_diverging_field) {
         (None, _, _) => {
             s.push_str("no previous run; nothing to compare\n");
-            return s;
+            s
         }
         (Some(prev), None, None) => {
             s.push_str(&format!("no divergence from previous run {prev}\n"));
-            return s;
+            s
         }
         (Some(prev), primary, _first) => {
             s.push_str(&format!("previous run: {prev}\n"));

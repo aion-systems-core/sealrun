@@ -5,14 +5,14 @@
 
 use serde_json::Value;
 use std::fs;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 
 fn repro_exe() -> PathBuf {
     PathBuf::from(env!("CARGO_BIN_EXE_repro"))
 }
 
-fn write_probe_crate(dir: &PathBuf) {
+fn write_probe_crate(dir: &Path) {
     fs::create_dir_all(dir.join("src")).unwrap();
     fs::write(
         dir.join("Cargo.toml"),
@@ -52,24 +52,16 @@ fn permuted_paths() -> Option<(String, String)> {
     Some((path_a, path_b))
 }
 
-fn last_local_artifact_json(dir: &PathBuf) -> String {
+fn last_local_artifact_json(dir: &Path) -> String {
     let idx = fs::read_to_string(dir.join("repro_runs").join("INDEX")).expect("INDEX");
-    let last = idx
-        .lines()
-        .filter(|l| !l.is_empty())
-        .last()
-        .expect("run id");
+    let last = idx.lines().rfind(|l| !l.is_empty()).expect("run id");
     fs::read_to_string(dir.join("repro_runs").join(format!("{last}.json"))).unwrap()
 }
 
-fn last_ci_artifact_json(dir: &PathBuf) -> String {
+fn last_ci_artifact_json(dir: &Path) -> String {
     let idx_path = dir.join("repro_ci_store").join("INDEX.jsonl");
     let idx = fs::read_to_string(&idx_path).expect("CI INDEX");
-    let last_line = idx
-        .lines()
-        .filter(|l| !l.is_empty())
-        .last()
-        .expect("index line");
+    let last_line = idx.lines().rfind(|l| !l.is_empty()).expect("index line");
     let v: Value = serde_json::from_str(last_line).unwrap();
     let run_id = v["run_id"].as_str().expect("run_id");
     fs::read_to_string(

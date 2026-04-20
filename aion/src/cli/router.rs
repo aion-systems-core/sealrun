@@ -34,12 +34,11 @@ pub fn route() -> Result<(), AionError> {
         Err(e) => return Err(AionError::InvalidArgs(e.to_string())),
     };
 
-    let entry = registry::lookup_entry(cli.tool.as_str()).ok_or_else(|| {
-        AionError::ToolNotFound {
+    let entry =
+        registry::lookup_entry(cli.tool.as_str()).ok_or_else(|| AionError::ToolNotFound {
             requested: cli.tool.clone(),
             available: registry::available_tool_names(),
-        }
-    })?;
+        })?;
 
     (entry.executor)(cli.rest).map_err(AionError::ExecutionFailed)
 }

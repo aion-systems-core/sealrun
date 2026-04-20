@@ -27,7 +27,7 @@ pub use crate::analysis::system_evaluation::CATEGORY_DEFINITION as CATEGORY_LINE
     about = CATEGORY_LINE,
     long_about = CATEGORY_LINE,
     disable_help_subcommand = true,
-    after_help = "AION Repro — use via `aion repro …`. Commands: run, replay, diff, why, root-cause, graph, ci. Pair why: `repro why <run_a> <run_b>`."
+    after_help = "AION Repro is normally used as `aion repro …`. Commands: run, replay, diff, why, root-cause, graph, ci. Compare two runs with `repro why <run_a> <run_b>`."
 )]
 pub struct Cli {
     #[command(subcommand)]
@@ -106,10 +106,7 @@ fn dispatch(cli: Cli) -> Result<(), String> {
         Command::Replay { run_id } => replay_handler::handle(&run_id),
         Command::Diff { run_a, run_b } => diff_handler::handle(&run_a, &run_b),
         Command::Graph { run_id } => graph_handler::handle(&run_id),
-        Command::Why {
-            run_id,
-            compare_to,
-        } => why_handler::handle(&run_id, compare_to.as_deref()),
+        Command::Why { run_id, compare_to } => why_handler::handle(&run_id, compare_to.as_deref()),
         Command::RootCause { run_id } => root_cause_handler::handle(&run_id),
         Command::Eval => eval_handler::handle(),
         Command::Ci { command } => ci_handler::handle(command),

@@ -96,8 +96,7 @@ pub struct MaturityComponent {
 // Change here, in the README, and in CLI help together.
 // ---------------------------------------------------------------------------
 
-pub const CATEGORY_DEFINITION: &str =
-    "Deterministic execution debugging for reproducible systems.";
+pub const CATEGORY_DEFINITION: &str = "Deterministic execution debugging for reproducible systems.";
 
 // ---------------------------------------------------------------------------
 // Source tree, embedded at compile time.

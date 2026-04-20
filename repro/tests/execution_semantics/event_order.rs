@@ -23,7 +23,12 @@ fn spawn_env_streams_exit_timing_order() {
         ev.first()
     );
 
-    let env_positions: Vec<usize> = ev.iter().enumerate().filter(|(_, e)| is_env_event(e)).map(|(i, _)| i).collect();
+    let env_positions: Vec<usize> = ev
+        .iter()
+        .enumerate()
+        .filter(|(_, e)| is_env_event(e))
+        .map(|(i, _)| i)
+        .collect();
     assert_eq!(
         env_positions.len(),
         1,
@@ -44,11 +49,19 @@ fn spawn_env_streams_exit_timing_order() {
         ev[last]
     );
 
-    for i in 2..second_last {
+    for (i, e) in ev
+        .iter()
+        .enumerate()
+        .skip(2)
+        .take(second_last.saturating_sub(2))
+    {
         assert!(
-            matches!(ev[i], ExecutionEvent::Stdout { .. } | ExecutionEvent::Stderr { .. }),
+            matches!(
+                e,
+                ExecutionEvent::Stdout { .. } | ExecutionEvent::Stderr { .. }
+            ),
             "between env and exit only Stdout/Stderr allowed at index {i}: {:?}",
-            ev[i]
+            e
         );
     }
 }
