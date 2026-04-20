@@ -107,7 +107,7 @@ examples/why_analysis.sh
 
 ## CI Integration Examples
 
-The snippets below sketch CI, local collaboration, and benchmarking flows. They are written as integration targets; align flags and subcommands with the current `aion repro` / `repro` CLI (see Quickstart) wherever your toolchain differs.
+These examples use only the currently available AION CLI commands.
 
 ### GitHub Actions Example
 
@@ -115,31 +115,38 @@ The snippets below sketch CI, local collaboration, and benchmarking flows. They 
 - name: Install AION
   run: cargo install --git https://github.com/aion-systems-core/aion
 
-- name: Record baseline (main branch)
-  run: aion repro run --label main -- ./scripts/build.sh
+- name: Capture baseline (main)
+  run: aion repro run -- ./scripts/build.sh
 
-- name: Record current (PR branch)
-  run: aion repro run --label pr -- ./scripts/build.sh
+- name: Capture current (PR)
+  run: aion repro run -- ./scripts/build.sh
 
 - name: Compare outputs
-  run: aion repro diff main pr --ci-check
+  run: aion repro diff last prev
 ```
 
 ### Local Debugging Example
 
 ```bash
-aion repro run --label my-env -- python train.py
-aion fetch colleague-env.json
-aion repro diff my-env colleague-env --why
+# Capture your environment
+aion repro run -- python train.py
+
+# Capture colleague's environment (manually shared JSON)
+# Save it under repro_runs/<id>.json
+# Then compare:
+aion repro diff last prev
+aion repro why last prev
 ```
 
 ### Reproducible Benchmarking Example
 
 ```bash
-for i in {1..10}; do
-    aion repro run --label "bench_$i" -- ./benchmark --iterations 1000
+for i in {1..5}; do
+    aion repro run -- ./benchmark --iterations 1000
 done
-aion repro diff bench_1 bench_10 --strict
+
+# Compare the last two runs
+aion repro diff last prev
 ```
 
 ## Release
