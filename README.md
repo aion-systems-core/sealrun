@@ -8,7 +8,7 @@ AION is a deterministic execution truth layer for debugging, comparison, and rep
 
 It captures what actually happened during a command, compares executions deterministically, and explains why they differ.
 
-If you have ever seen the same command succeed once and fail the next time — AION makes the difference visible.
+If the same command behaves differently across machines, environments, or time — AION makes the difference visible.
 
 ## About
 
@@ -37,8 +37,6 @@ AION exists to make execution behavior:
 * explainable  
 * reproducible  
 
----
-
 ## What AION is
 
 AION is a system for deterministic execution analysis.
@@ -53,8 +51,6 @@ It is composed of multiple surfaces:
 
 Repro is the first available surface.
 
----
-
 ## 5-second proof
 
 ```bash
@@ -63,19 +59,14 @@ aion repro diff last prev
 aion repro why last prev
 ```
 
-AION captures executions, compares them, and explains the difference.
-
 ## What you get
 
-Capture — see exactly what happened during a run
+* Capture — see exactly what happened during a run  
+* Compare — see what changed between runs  
+* Explain — understand why it changed  
+* Replay — reproduce output without re-running  
 
-Compare — see what changed between runs
-
-Explain — understand why it changed
-
-Replay — reproduce output without re-running
-
-Artifacts are stored locally under ./repro_runs/.
+Artifacts are stored locally under `./repro_runs/`.
 
 ## Installation
 
@@ -99,11 +90,9 @@ aion repro why last prev
 
 Runnable examples are available in:
 
-examples/basic_run.sh
-
-examples/diff_example.sh
-
-examples/why_analysis.sh
+* examples/basic_run.sh  
+* examples/diff_example.sh  
+* examples/why_analysis.sh
 
 ## CI Integration Examples
 
@@ -156,6 +145,8 @@ See RELEASE.md for version information and changes.
 ## Contributing
 
 See CONTRIBUTING.md.
+
+---
 
 ## License
 
