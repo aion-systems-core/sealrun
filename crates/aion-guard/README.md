@@ -1,4 +1,4 @@
-# aion-guard — Deterministic CI Drift Detection
+# aion-guard - Deterministic CI Drift Detection
 
 `aion-guard` provides deterministic drift detection for CI/CD pipelines.  
 It compares command execution against a recorded baseline and returns stable exit codes.
@@ -19,21 +19,21 @@ It compares command execution against a recorded baseline and returns stable exi
 
 Record a baseline:
 
+```bash
 aion guard record --cmd "echo hello"
-
-Code
+```
 
 Check for drift:
 
+```bash
 aion guard check --cmd "echo hello"
-
-Code
+```
 
 Exit codes:
 
-- `0` — no drift  
-- `1` — drift detected  
-- `2` — baseline missing or invalid  
+- `0` - no drift  
+- `1` - drift detected  
+- `2` - baseline missing or invalid  
 
 ---
 
@@ -42,9 +42,9 @@ Exit codes:
 `aion-guard` dynamically loads the AION Execution Kernel at runtime.  
 If the kernel is missing:
 
+```text
 AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.
-
-Code
+```
 
 ---
 

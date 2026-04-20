@@ -1,4 +1,4 @@
-# aion-repro — Deterministic Run Capture & Replay
+# aion-repro - Deterministic Run Capture & Replay
 
 `aion-repro` provides deterministic run capture, replay, diff, and why-analysis.  
 It freezes command execution into reproducible artifacts and allows replay without re-running the original command.
@@ -19,27 +19,27 @@ It freezes command execution into reproducible artifacts and allows replay witho
 
 Capture a run:
 
+```bash
 aion repro run -- echo "hello"
-
-Code
+```
 
 Replay a previous run:
 
+```bash
 aion repro replay <id>
-
-Code
+```
 
 Diff two runs:
 
+```bash
 aion repro diff <id-a> <id-b>
-
-Code
+```
 
 Why-analysis:
 
+```bash
 aion repro why <id-a> <id-b>
-
-Code
+```
 
 ---
 
@@ -48,9 +48,9 @@ Code
 `aion-repro` dynamically loads the AION Execution Kernel at runtime.  
 If the kernel is missing:
 
+```text
 AION Kernel not found. Install aion-kernel or set AION_KERNEL_PATH.
-
-Code
+```
 
 ---
 
