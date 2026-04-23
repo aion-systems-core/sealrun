@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+  pull_request:
+    branches:
+      - main
+      - feature/**
+
+jobs:
+  ci:
+    name: fmt-clippy-build-test
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout source and install stable Rust toolchain.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      # Cache Cargo registry/target metadata to speed up CI.
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+
+      # Formatting gate.
+      - name: rustfmt
+        run: cargo fmt --all -- --check
+
+      # Lint gate.
+      - name: clippy
+        run: cargo clippy --workspace --all-targets --all-features -- -D warnings
+
+      # Build all workspace crates.
+      - name: build
+        run: cargo build --workspace --all-targets
+
+      # Run all workspace tests.
+      - name: test
+        run: cargo test --workspace --all-targets
