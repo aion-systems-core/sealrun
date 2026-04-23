@@ -1,0 +1,20 @@
+# --- Documentation (Markdown, Specs, Guides) ---
+docs/* linguist-documentation
+docs/**/* linguist-documentation
+
+# --- Enterprise materials ---
+enterprise/* linguist-documentation
+docs/enterprise/* linguist-documentation
+
+# --- HTML documentation ---
+*.html linguist-documentation
+
+# --- SVG diagrams ---
+*.svg linguist-documentation
+
+# --- Markdown files everywhere ---
+*.md linguist-documentation
+
+# --- Ignore vendored or legacy folders ---
+legacy/* linguist-vendored
+legacy_gold/* linguist-vendored
