@@ -1,0 +1,36 @@
+name: Release Check
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  release-check:
+    name: pre-release-sanity
+    runs-on: ubuntu-latest
+
+    steps:
+      # Build + test release candidates before any publish step.
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build (release)
+        run: cargo build --workspace --release
+
+      - name: Test
+        run: cargo test --workspace --all-targets
+
+      # Keep a minimal binary artifact for manual inspection.
+      - name: Upload aion binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: aion-cli-linux
+          path: target/release/aion
+          if-no-files-found: error
