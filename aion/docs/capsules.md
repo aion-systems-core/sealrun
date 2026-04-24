@@ -1,4 +1,4 @@
-# Capsules
+﻿# Capsules
 
 A **capsule** is the durable record of a deterministic AI run: model, prompt, seed, emitted tokens, traces, evidence, and explainability payloads (Why report and causal graph).
 
@@ -10,14 +10,14 @@ A **capsule** is the durable record of a deterministic AI run: model, prompt, se
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
 
 ---
 
@@ -48,28 +48,28 @@ cargo run -p aion-cli -- execute ai-replay --capsule /path/to/capsule.aionai
 ## CLI surface
 
 ```bash
-aion execute ai --model M --prompt "your text" --seed 42
-aion execute ai-replay --capsule /path/to/capsule.aionai
-aion policy validate --capsule /path/to/capsule.aionai --policy examples/governance/dev.policy.json
+sealrun execute ai --model M --prompt "your text" --seed 42
+sealrun execute ai-replay --capsule /path/to/capsule.aionai
+sealrun policy validate --capsule /path/to/capsule.aionai --policy examples/governance/dev.policy.json
 ```
 
 ## Conceptual diagram
 
 ```
-  ┌─────────────┐
-  │  Capsule    │
-  ├─────────────┤
-  │ tokens      │
-  │ evidence    │
-  │ why + graph │
-  └─────────────┘
+  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+  â”‚  Capsule    â”‚
+  â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+  â”‚ tokens      â”‚
+  â”‚ evidence    â”‚
+  â”‚ why + graph â”‚
+  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ## Related
 
 - [Replay](replay.md)
 - [Drift](drift.md)
-- [SDK](sdk.md) — `sdk capsule build|load`
+- [SDK](sdk.md) â€” `sdk capsule build|load`
 - [AI capsule schema](ai-capsule-schema.json)
 - [Example capsule JSON](example-capsule.json)
 

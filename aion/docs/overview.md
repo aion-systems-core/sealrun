@@ -7,7 +7,7 @@ SealRun Execution OS is a **deterministic AI execution OS**: it records runs as 
 - Execution-OS + Contract-OS model
 - 5 kernel layers for deterministic run execution
 - Enterprise-layer contracts across phases 1-12
-- Canonical diagnostics and readiness output via `aion doctor`
+- Canonical diagnostics and readiness output via `sealrun doctor`
 
 ---
 
@@ -52,14 +52,14 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 ## CLI surface
 
 ```bash
-aion doctor
-aion reliability status
-aion ops runbooks
-aion dist status
-aion governance status
-aion ux api
-aion tests strategy
-aion measure metrics
+sealrun doctor
+sealrun reliability status
+sealrun ops runbooks
+sealrun dist status
+sealrun governance status
+sealrun ux api
+sealrun tests strategy
+sealrun measure metrics
 ```
 
 ## Enterprise-readiness
@@ -81,13 +81,13 @@ aion measure metrics
 - [Operations guide](operations-guide.md)
 - [Security guide](security-guide.md)
 - [Evidence model](evidence/evidence_model.md)
-- [Compliance one-pager](compliance/aion_compliance_onepager.md)
+- [Compliance one-pager](compliance/sealrun_compliance_onepager.md)
 - [Pilot onboarding](pilot/00_install.md)
-- [SealRun in 5 Minuten (executive)](executive/aion_in_5_minutes.md)
-- [Enterprise sales package (source-anchored)](enterprise/AION_Enterprise_Sales_Package.md) · [HTML edition](enterprise/AION_Enterprise_Sales_Package.html)
+- [SealRun in 5 Minuten (executive)](executive/sealrun_in_5_minutes.md)
+- [Enterprise sales package (source-anchored)](enterprise/SealRun_Enterprise_Sales_Package.md) · [HTML edition](enterprise/SealRun_Enterprise_Sales_Package.html)
 
 ## Enterprise status at a glance
 
-- Phase 1-12 enterprise contracts are implemented in `aion-core` and surfaced in `aion doctor`.
+- Phase 1-12 enterprise contracts are implemented in `aion-core` and surfaced in `sealrun doctor`.
 - Contract-centric command groups: `reliability`, `ops`, `dist`, `governance`, `ux`, `tests`, `measure`.
 - Deterministic JSON envelopes are the default audit interface for automation and compliance tooling.

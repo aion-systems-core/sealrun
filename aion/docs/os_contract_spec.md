@@ -1,4 +1,4 @@
-# OS Contract Spec
+﻿# OS Contract Spec
 
 This specification is the canonical contract definition for SealRun Execution OS kernel-layer and enterprise-layer behavior.
 
@@ -15,14 +15,14 @@ serialization: `deterministic_json`
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
 
 ---
 
@@ -37,8 +37,8 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 
 ## CLI surface
 
-Primary access path for contract states: `aion doctor` plus domain command groups:
-`aion reliability`, `aion ops`, `aion dist`, `aion governance`, `aion ux`, `aion tests`, `aion measure`.
+Primary access path for contract states: `sealrun doctor` plus domain command groups:
+`sealrun reliability`, `sealrun ops`, `sealrun dist`, `sealrun governance`, `sealrun ux`, `sealrun tests`, `sealrun measure`.
 
 ## Enterprise-readiness
 

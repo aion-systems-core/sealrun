@@ -1,4 +1,4 @@
-# Replay
+﻿# Replay
 
 **Replay** reconstructs a run from a capsule and compares it to the stored record, producing a structured **replay report** (JSON/HTML/SVG).
 
@@ -10,14 +10,14 @@
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
 
 ---
 
@@ -61,9 +61,9 @@ This writes `sdk.json` (+ HTML/SVG) under `aion_output/sdk-replay/<timestamp>/`.
 ## CLI surface
 
 ```bash
-aion execute ai-replay --capsule path/to/capsule.aionai
-aion sdk replay --capsule path/to/capsule.aionai
-aion doctor
+sealrun execute ai-replay --capsule path/to/capsule.aionai
+sealrun sdk replay --capsule path/to/capsule.aionai
+sealrun doctor
 ```
 
 ## Related

@@ -1,4 +1,4 @@
-# Compatibility matrix
+﻿# Compatibility matrix
 
 This matrix summarizes core version anchors for deterministic compatibility in SealRun Execution OS.
 
@@ -10,21 +10,21 @@ This matrix summarizes core version anchors for deterministic compatibility in S
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
 
 ---
 
 | Component | Version |
 |-----------|---------|
 | SealRun Execution OS product | `VERSION` file |
-| CLI binary | `aion --version` |
+| CLI binary | `sealrun --version` |
 | AI capsule schema | `version = "1"` |
 | Why schema | `why_schema_version = "2"` |
 | Governance policy version | `policy_version = "1"` |
@@ -37,9 +37,9 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 ## CLI surface
 
 ```bash
-aion --version
-aion doctor
-aion dist identity
+sealrun --version
+sealrun doctor
+sealrun dist identity
 ```
 
 ## Enterprise-readiness

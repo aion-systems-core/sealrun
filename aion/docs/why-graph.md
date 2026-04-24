@@ -1,4 +1,4 @@
-# Why & causal graph
+﻿# Why & causal graph
 
 SealRun Execution OS attaches a structured **Why** report and a **causal graph** to AI capsules so runs are explainable without opening proprietary model weights.
 
@@ -10,14 +10,14 @@ SealRun Execution OS attaches a structured **Why** report and a **causal graph**
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
 
 ---
 
@@ -25,9 +25,9 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 
 After `execute ai`, you typically receive:
 
-- `why.html` — tables for prompt, token, seed/determinism influence plus embedded graph SVG  
-- `why.svg` — standalone causal graph  
-- `ai.html` / capsule JSON — includes the same structures for tooling  
+- `why.html` â€” tables for prompt, token, seed/determinism influence plus embedded graph SVG  
+- `why.svg` â€” standalone causal graph  
+- `ai.html` / capsule JSON â€” includes the same structures for tooling  
 
 Replay adds **why diff** artefacts when you run `execute ai-replay`.
 
@@ -59,18 +59,18 @@ cargo run -p aion-cli -- sdk explain --capsule path/to/capsule.aionai
 ## CLI surface
 
 ```bash
-aion execute ai --model m --prompt "a b" --seed 1
-aion observe graph path/to/run.json --format dot --depth 20
-aion sdk explain --capsule path/to/capsule.aionai
+sealrun execute ai --model m --prompt "a b" --seed 1
+sealrun observe graph path/to/run.json --format dot --depth 20
+sealrun sdk explain --capsule path/to/capsule.aionai
 ```
 
 ## ASCII sketch
 
 ```
-  prompt segments ──┐
-                    ├──► token_0 ──► token_1 ──► …
-  seed ─────────────┤
-  determinism ──────┘
+  prompt segments â”€â”€â”
+                    â”œâ”€â”€â–º token_0 â”€â”€â–º token_1 â”€â”€â–º â€¦
+  seed â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+  determinism â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ## Related

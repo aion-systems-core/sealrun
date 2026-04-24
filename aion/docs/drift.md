@@ -1,6 +1,6 @@
-# Drift
+﻿# Drift
 
-**Drift** answers: “what changed between two runs?” For AI capsules, drift is computed over stable fields (tokens, evidence digests, embedded Why/graph projections, etc.).
+**Drift** answers: â€œwhat changed between two runs?â€ For AI capsules, drift is computed over stable fields (tokens, evidence digests, embedded Why/graph projections, etc.).
 
 ## At a glance
 
@@ -10,14 +10,14 @@
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
 
 ---
 
@@ -43,7 +43,7 @@ Exit code **2** when drift is detected (useful in CI).
 {
   "changed": true,
   "fields": ["tokens", "seed"],
-  "details": ["…"]
+  "details": ["â€¦"]
 }
 ```
 
@@ -56,9 +56,9 @@ Exit code **2** when drift is detected (useful in CI).
 ## CLI surface
 
 ```bash
-aion observe drift left.json right.json
-aion sdk drift --a first.aionai --b second.aionai
-aion doctor
+sealrun observe drift left.json right.json
+sealrun sdk drift --a first.aionai --b second.aionai
+sealrun doctor
 ```
 
 ## Related

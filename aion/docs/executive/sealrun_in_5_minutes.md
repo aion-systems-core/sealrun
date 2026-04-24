@@ -1,6 +1,10 @@
 # SealRun in 5 Minuten (Executive Summary)
 
-SealRun Execution OS ist ein deterministisches Execution-OS mit Contract-OS-Steuerfläche für KI-Ausführung.
+## Purpose (EN)
+
+Five-minute **executive** orientation: deterministic execution, contract controls, and why SealRun is an **Execution-OS** (contracts) rather than a sandbox OS—before deeper reading in [Architecture](../architecture.md).
+
+SealRun ist eine deterministische Ausführungs-Engine mit Contract-Layer-Steuerfläche für KI-Ausführung.
 
 ## At a glance
 
@@ -14,7 +18,7 @@ SealRun guarantees deterministic execution, replay symmetry, drift detection and
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
+This is a deliberate design choice: SealRun is a deterministic execution engine, not a Security-Sandbox-OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
 If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
@@ -23,7 +27,7 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 
 ## Was ist SealRun?
 
-SealRun Execution OS ist eine **deterministische Ausführungsschicht für KI‑Runs**: Jeder Lauf wird als **Capsule** festgehalten — mit Token‑Spur, Evidenz‑Kette, Erklärbarkeit (Why), Kausalgraph und Governance‑Prüfungen.
+SealRun ist eine **deterministische Ausführungsschicht für KI‑Runs**: Jeder Lauf wird als **Capsule** festgehalten — mit Token‑Spur, Evidenz‑Kette, Erklärbarkeit (Why), Kausalgraph und Governance‑Prüfungen.
 
 ## Warum deterministisch?
 
@@ -48,10 +52,10 @@ Weil SealRun als **Schicht unterhalb der App** gedacht ist: **CLI**, **SDK**, Ar
 ## CLI surface
 
 ```bash
-aion doctor
-aion governance status
-aion reliability status
-aion measure audits
+sealrun doctor
+sealrun governance status
+sealrun reliability status
+sealrun measure audits
 ```
 
 ## Enterprise-readiness
@@ -60,4 +64,4 @@ SealRun ist enterprise-ready, wenn deterministische Contract-Ausgaben release-ü
 
 ---
 
-**Guided Link: SealRun in 5 Minuten** — Vertiefung: [Guided tour](../guided_tour.md) · [Compliance One-Pager](../compliance/aion_compliance_onepager.md) · [Evidence model](../evidence/evidence_model.md)
+**Guided Link: SealRun in 5 Minuten** — Vertiefung: [Guided tour](../guided_tour.md) · [Compliance One-Pager](../compliance/sealrun_compliance_onepager.md) · [Evidence model](../evidence/evidence_model.md)

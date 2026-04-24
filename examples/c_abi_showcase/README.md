@@ -12,7 +12,7 @@ cargo build -p aion-engine
 
 On Windows the artifact is `target/debug/aion_engine.dll` (or `target/release/` with `--release`). On Linux `target/debug/libaion_engine.so`. On macOS `target/debug/libaion_engine.dylib`.
 
-Set `SEALRUN_LIB_PATH` (preferred) or legacy `AION_LIB_PATH` to the directory containing that file when running Python examples, or rely on the default search used by each Makefile.
+Set `SEALRUN_LIB_PATH` to the directory containing that file when running Python examples, or rely on the default search used by each Makefile. The CLI also accepts the legacy library-path environment variable for compatibility; see `crates/aion-cli/src/output_bundle.rs`.
 
 ## Build all (POSIX)
 
