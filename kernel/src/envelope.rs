@@ -94,7 +94,7 @@ pub fn capture_execution_envelope(
     profile: &DeterminismProfile,
     run_seed: u64,
 ) -> ExecutionEnvelope {
-    let mut snap = profile.clone();
+    let mut snap = *profile;
     snap.freeze_time |= snap.time_frozen;
     snap.freeze_random |= snap.syscall_intercept;
     ExecutionEnvelope {
