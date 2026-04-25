@@ -20,11 +20,17 @@ export default function SealrunEnterpriseReadinessBenchmark() {
         Self-assessment after documentation refinement (April 2026). Not a third-party audit, SOC 2 report, or ISO 27001 certificate.
       </Text>
 
-      <Grid columns={3} gap={16}>
-        <Stat value="88 to 92" label="Documentation and procurement pack maturity (internal band)" tone="success" />
+      <Grid columns={4} gap={16}>
+        <Stat value="88 to 92" label="Documentation and procurement pack maturity" tone="success" />
+        <Stat value="90 to 95" label="Pilot readiness maturity (with Pilot Readiness Pack)" tone="success" />
         <Stat value="P0 to P2" label="Program checklist" tone="success" />
         <Stat value="Customer-owned" label="Certification and boundary testing" tone="warning" />
       </Grid>
+
+      <Text tone="tertiary">
+        Pilot Readiness Pack: complete — see docs/pilot/ (success criteria, scope, break-glass, secrets, backup, BOM, onboarding,
+        monitoring, data classification, feedback, demo path, procurement mini-pack).
+      </Text>
 
       <Divider />
 
@@ -35,6 +41,18 @@ export default function SealrunEnterpriseReadinessBenchmark() {
           ["P0", "Tenant isolation, RBAC, OIDC, evidence chain, replay and drift semantics documented", "Complete"],
           ["P1", "SIEM and OTel export, release attestation, SBOM, Cosign and Sigstore runbooks", "Complete"],
           ["P2", "Policies, compliance matrices, templates, buyer and trust-center packs, adapter guides", "Complete"],
+        ]}
+      />
+
+      <H2>Pilot success metrics (track weekly)</H2>
+      <Table
+        headers={["Metric", "Source"]}
+        rows={[
+          ["Reference replay pass rate (target per pilot charter)", "docs/pilot/success-criteria.md"],
+          ["SIEM and OTel exporter health and alert coverage", "docs/pilot/monitoring-minimum.md"],
+          ["Tenant, RBAC, and OIDC validation checkpoints", "docs/pilot/success-criteria.md, onboarding-script.md"],
+          ["Backup or restore exercise completed", "docs/pilot/backup-and-restore.md"],
+          ["Weekly feedback and pain-point backlog", "docs/pilot/feedback-loop.md"],
         ]}
       />
 
@@ -95,6 +113,18 @@ export default function SealrunEnterpriseReadinessBenchmark() {
       </Text>
 
       <Divider />
+
+      <H2>Next steps for pilot execution</H2>
+      <Table
+        headers={["Step", "Action"]}
+        rows={[
+          ["1", "Sign scope-definition.md and break-glass-and-ownership.md; freeze bill-of-materials.md"],
+          ["2", "Run onboarding-script.md in staging; attach redacted outputs to kickoff ticket"],
+          ["3", "Enable monitoring-minimum.md alerts and SIEM field mapping table"],
+          ["4", "Schedule weekly feedback-loop.md sessions and demo-golden-path.md dry run"],
+          ["5", "Complete backup-and-restore.md exercise before production subset (if in scope)"],
+        ]}
+      />
 
       <H2>Next 90 days (suggested)</H2>
       <Table
