@@ -32,7 +32,7 @@ The enterprise **policy engine** validates and evaluates deterministic governanc
 }
 ```
 
-## Example flows
+## Flows
 
 1. **Author:** Edit policy JSON from an approved governance bundle baseline.
 2. **Validate in CI:** Fail builds on invalid policies before deployment.

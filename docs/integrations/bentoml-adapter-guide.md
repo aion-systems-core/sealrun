@@ -10,7 +10,7 @@
 - **RBAC-aware registration:** Only entitled service accounts register capsules under the correct tenant (see [RBAC](../rbac.md), [Multi-tenancy](../multi-tenancy.md)).
 - **Policy gate:** Evaluate **policy engine** rules on model, seed, declared external calls, and evidence fields before marking a run accepted.
 
-## Example flows
+## Flows
 
 1. **Sync inference:** Single request/response path with stable serializer; emit capsule per request or batched window per your volume policy.
 2. **Canary:** Route fraction of traffic to candidate bento; compare **drift** against baseline capsule set.

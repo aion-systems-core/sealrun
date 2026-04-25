@@ -32,7 +32,7 @@ SealRun enterprise **RBAC** (role-based access control) uses a YAML policy file 
 
 Exact CLI command gating is defined by the product; treat this table as the enterprise permission model for documentation and **policy evaluation** alignment.
 
-## Example flows
+## Flows
 
 1. **Bootstrap:** Seed `rbac.policy.yaml` with break-glass `admin`, then assign scoped roles.
 2. **Audit export:** Run `rbac export` and attach to periodic access reviews.

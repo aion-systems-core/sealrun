@@ -41,7 +41,7 @@ cargo build --release -p aion-cli
 
 ## Enterprise
 
-For regulated industries requiring **filesystem/network isolation**, **compliance exports**, or **SLA‑backed support**, see the **SealRun Enterprise** materials under `docs/enterprise/` in the main repository.
+For regulated industries requiring **filesystem/network isolation**, **compliance exports**, or **SLA‑backed support**, see the **SealRun Enterprise** materials under `docs/enterprise/` in the main repository. Start from the **[documentation index](../docs/README.md)** and **[Trust Center](../docs/trust-center.md)** for the full map.
 
 ## License
 

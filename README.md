@@ -78,6 +78,11 @@ SealRun separates the **five-layer deterministic kernel model** (State, Process,
 
 Authoritative definitions: **[OS Contract Specification](docs/os_contract_spec.md)** | [Architecture](docs/architecture.md)
 
+## Documentation
+
+- **[Documentation index](docs/README.md)** — canonical map of product, enterprise, pilot, compliance, and integration docs.
+- **[Trust Center](docs/trust-center.md)** — enterprise controls, evidence sources, and procurement entry points.
+
 ## Key features
 
 - **Deterministic capsules** - versioned run records for archival and comparison

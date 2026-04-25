@@ -11,7 +11,7 @@ SealRun enterprise storage is **tenant-aware** and **storage-isolated**. Every *
 - **Lifecycle coupling:** **Tenant isolation** interacts with retention, purge, and legal hold (see [Lifecycle controls](lifecycle-controls.md)).
 - **RBAC and OIDC:** Authorization and **OIDC authentication** gate tenant administration and sensitive operations (see [RBAC](rbac.md), [OIDC auth](oidc-auth.md)).
 
-## Example flows
+## Flows
 
 1. **Onboard a tenant:** Create tenant metadata, assign RBAC roles, configure retention defaults.
 2. **Register workloads:** Run governed executions; capsules and evidence land in the tenant partition.

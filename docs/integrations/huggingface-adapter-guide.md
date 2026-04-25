@@ -10,7 +10,7 @@ This guide describes how to wrap **Hugging Face** model inference behind SealRun
 - **Tenant context:** Post-run registration associates **capsule** and **evidence chain** entries with a tenant partition (see [Multi-tenancy](../multi-tenancy.md)).
 - **Governance layer:** **Policy evaluation** gates acceptance using allowed models, seeds, external hosts, and **required_evidence_fields** (see [Policy engine](../policy-engine.md)).
 
-## Example flows
+## Flows
 
 1. **Offline batch:** Fixed dataset shard, pinned model revision, recorded seed; emit capsule + sidecar evidence.
 2. **Online service:** Request-scoped run with allow-listed external artifact fetch; deny if host not in **policy engine** `allowed_external_calls`.

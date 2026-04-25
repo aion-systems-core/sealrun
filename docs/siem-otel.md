@@ -10,7 +10,7 @@ SealRun enterprise can export governance and capsule-related events to enterpris
 - **OTel export:** OTLP HTTP export path for traces/metrics/logs depending on collector configuration (see your collector docs).
 - **Event model:** Governance, **policy evaluation**, and capsule lifecycle signals should carry stable identifiers (`tenant_id`, capsule references, **governance decision** IDs where applicable) for correlation with **evidence chain** artifacts.
 
-## Example flows
+## Flows
 
 1. **Onboarding:** Configure sink URLs and secrets in your secret manager; run `send-test` for each **SIEM** vendor in use.
 2. **OTel validation:** Point `otel export` at a staging collector; verify attributes and resource identity before production.

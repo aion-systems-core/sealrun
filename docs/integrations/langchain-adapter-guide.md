@@ -10,7 +10,7 @@ This guide covers integrating **LangChain** chains and agents with SealRun so th
 - **Tenant-aware registration:** Persisted indexes respect **tenant isolation** (see [Multi-tenancy](../multi-tenancy.md)).
 - **Governance:** **Policy evaluation** validates models, tool endpoints, and **required_evidence_fields** before downstream orchestration proceeds (see [Policy engine](../policy-engine.md)).
 
-## Example flows
+## Flows
 
 1. **Document QA chain:** Snapshot retriever config and embedding model revision; run evaluate step; store capsule + evidence.
 2. **Agent with tools:** Allow-list tool HTTP hosts in `allowed_external_calls`; deny dynamic URLs not in policy.

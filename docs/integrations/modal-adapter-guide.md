@@ -10,7 +10,7 @@
 - **Tenant propagation:** Job identity carries tenant context into registration and evidence indexes (see [Multi-tenancy](../multi-tenancy.md)).
 - **Attestation linkage:** For strict programs, attach **Cosign** signatures for images and **SBOM** references where Modal build pipelines emit them (see [Release attestation](../release-attestation.md)).
 
-## Example flows
+## Flows
 
 1. **Batch inference:** Submit with fixed seed and model allow-list; collect capsule bundle at job completion.
 2. **Scheduled replay check:** Nightly job replays prior capsules; **drift** reports feed SOC dashboards via **SIEM** / **OTel** (see [SIEM and OTel](../siem-otel.md)).

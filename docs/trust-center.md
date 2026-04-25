@@ -4,6 +4,8 @@
 
 This page is the **baseline trust narrative** for SealRun enterprise programs. It links deterministic execution (**capsule**, **replay**, **drift**), the **evidence chain**, **governance decisions**, **policy evaluation**, **tenant isolation**, **RBAC**, **OIDC**, observability (**SIEM** / **OTel**), and supply-chain integrity (**Cosign** / **Sigstore**, **SBOM**). It does not claim third-party certifications; customers map these artifacts to their own control frameworks.
 
+Full navigation for all Markdown hubs: [Documentation index](README.md).
+
 ## Architecture (control framing)
 
 | Control family | SealRun alignment |

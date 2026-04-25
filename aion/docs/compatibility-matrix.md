@@ -1,38 +1,13 @@
-# Compatibility matrix
+# Compatibility matrix — canonical pointer
 
-## Purpose
+## Overview
 
-Single table of **version anchors** (product, CLI, capsule schema, Why schema, policy) for integrators validating deterministic compatibility.
+Version anchors and integration references are maintained in one place to prevent drift between trees.
 
-This matrix summarizes core version anchors for deterministic compatibility in SealRun.
+## Canonical document
 
-## At a glance
+- **[Compatibility matrix](../../docs/compatibility-matrix.md)**
 
-- Compatibility is contract-governed and version-explicit.
-- Capsule, Why, and policy versions are stable integration anchors.
-- Use doctor and distribution identity outputs for runtime validation.
+## Next steps
 
-| Component | Version |
-|-----------|---------|
-| SealRun product | `VERSION` file |
-| CLI binary | `sealrun --version` |
-| AI capsule schema | `version = "1"` |
-| Why schema | `why_schema_version = "2"` |
-| Governance policy version | `policy_version = "1"` |
-
-## Upgrade guidance
-
-- Minor/patch upgrades should preserve capsule `version = "1"` compatibility.
-- If capsule version changes in future major versions, migration docs must include conversion tooling.
-
-## CLI surface
-
-```bash
-sealrun --version
-sealrun doctor
-sealrun dist identity
-```
-
-## Enterprise-readiness
-
-Compatibility is enterprise-ready when supported version combinations remain deterministic, documented, and test-covered.
+Update only the canonical file when capsule, policy, or enterprise schema versions change.

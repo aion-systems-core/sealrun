@@ -11,7 +11,7 @@
 - **Legal hold:** Blocks purge and tenant deletion while enabled; supports defensible preservation of **evidence chain** continuity.
 - **Interactions:** Complements **tenant isolation** (see [Multi-tenancy](multi-tenancy.md)) and **RBAC** permissions such as `purge`, `retention-set`, and `legal-hold` (see [RBAC](rbac.md)).
 
-## Example flows
+## Flows
 
 1. **Set retention:** Operator sets `--days` per tenant policy; document approval if required by your change record.
 2. **Legal hold for investigation:** Enable legal hold before forensic replay or evidence export; run **replay** / **drift** checks without losing index integrity.

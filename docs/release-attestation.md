@@ -11,7 +11,7 @@ Release **attestation** ties shipped binaries to cryptographic signatures and so
 - **SBOM:** Emit machine-readable dependency inventory for vulnerability management and license review.
 - **Governance link:** Strict governance bundles may require `release_attestation_id` in **required_evidence_fields** (see `docs/governance/bundles/strict.yaml` and [Policy engine](policy-engine.md)).
 
-## Example flows
+## Flows
 
 1. **Build:** CI produces the release binary and **SBOM**; store both as immutable objects.
 2. **Sign:** Run `release-attestation sign` on the artifact; publish signature and public key material per your key management policy.

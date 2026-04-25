@@ -11,7 +11,7 @@ SealRun enterprise authentication supports **OIDC** using the **device authoriza
 3. CLI polls the token endpoint and persists tokens for subsequent enterprise commands.
 4. **Logout** clears local session state; **status** supports operational checks and evidence collection.
 
-## Example flows
+## Flows
 
 1. **Interactive login:** Operator runs `auth login` with client and endpoint parameters from your IdP registration.
 2. **Session verification:** Run `auth status` in runbooks and CI debug steps before privileged actions.

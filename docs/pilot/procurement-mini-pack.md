@@ -4,6 +4,8 @@
 
 One-page **starter** for vendor security questionnaires: where to find summaries, what is certified vs design-only, and **known open items**. Not legal advice; Legal owns customer-facing terms.
 
+For the full documentation map (including enterprise hubs outside this pilot folder), see the [Documentation index](../README.md).
+
 ## Trust Center summary
 
 SealRun publishes a capability map covering **tenant isolation**, **RBAC**, **OIDC**, deterministic **replay** and **drift**, **evidence chain**, **SIEM** / **OTel**, and **Cosign** / **Sigstore** **attestation** with **SBOM**. Entry point: [Trust Center](../trust-center.md).

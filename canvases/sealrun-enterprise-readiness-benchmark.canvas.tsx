@@ -17,19 +17,24 @@ export default function SealrunEnterpriseReadinessBenchmark() {
     <Stack gap={24}>
       <H1>SealRun enterprise readiness benchmark</H1>
       <Text tone="secondary">
-        Self-assessment after documentation refinement (April 2026). Not a third-party audit, SOC 2 report, or ISO 27001 certificate.
+        Self-assessment (April 2026). Not a third-party audit, SOC 2 report, or ISO 27001 certificate. After a repository-wide
+        documentation audit, canonical content lives under docs/ with a single documentation index.
       </Text>
 
       <Grid columns={4} gap={16}>
-        <Stat value="88 to 92" label="Documentation and procurement pack maturity" tone="success" />
-        <Stat value="90 to 95" label="Pilot readiness maturity (with Pilot Readiness Pack)" tone="success" />
+        <Stat value="92 to 96" label="Documentation maturity (post-audit band)" tone="success" />
+        <Stat value="90 to 95" label="Pilot readiness maturity" tone="success" />
         <Stat value="P0 to P2" label="Program checklist" tone="success" />
         <Stat value="Customer-owned" label="Certification and boundary testing" tone="warning" />
       </Grid>
 
       <Text tone="tertiary">
-        Pilot Readiness Pack: complete — see docs/pilot/ (success criteria, scope, break-glass, secrets, backup, BOM, onboarding,
-        monitoring, data classification, feedback, demo path, procurement mini-pack).
+        Repository-wide documentation audit: complete — deduplicated aion/docs mirrors into canonical pointers; added docs/README.md
+        index; normalized Flows section naming across enterprise and adapter guides; fixed enterprise changelog relative links.
+      </Text>
+
+      <Text tone="tertiary">
+        Pilot Readiness Pack: complete under docs/pilot/ (see procurement-mini-pack.md for the index).
       </Text>
 
       <Divider />
@@ -43,6 +48,22 @@ export default function SealrunEnterpriseReadinessBenchmark() {
           ["P2", "Policies, compliance matrices, templates, buyer and trust-center packs, adapter guides", "Complete"],
         ]}
       />
+
+      <H2>Audit summary — removed or merged content</H2>
+      <Table
+        headers={["Area", "Action"]}
+        rows={[
+          ["aion/docs mirrors", "Merged into canonical pointers to root docs/ for nine topics plus enterprise sales and compliance one-pager"],
+          ["Duplicate prose", "Eliminated by single-source policy; aion tree retains unique developer and launch docs only"],
+          ["Navigation", "Added docs/README.md as the documentation index linked from README and Trust Center"],
+        ]}
+      />
+
+      <H2>Consistency improvements</H2>
+      <Text tone="secondary">
+        Shared Flows section label across enterprise core pages and all adapter guides; SIEM and OpenTelemetry (OTel) wording aligned;
+        Trust Center links to the documentation index; enterprise HTML changelog uses repo-relative markdown links.
+      </Text>
 
       <H2>Pilot success metrics (track weekly)</H2>
       <Table
@@ -91,7 +112,7 @@ export default function SealrunEnterpriseReadinessBenchmark() {
           <CardBody>
             <Text tone="secondary">
               SRE-style runbooks cover replay failure, drift anomaly, evidence corruption, tenant isolation attempts, and SIEM or OTel
-              exporter failure with trigger, detection, mitigation, verification, and escalation sections.
+              exporter failure with trigger, detection, mitigation, verification, escalation, and post-incident sections.
             </Text>
           </CardBody>
         </Card>
@@ -123,6 +144,17 @@ export default function SealrunEnterpriseReadinessBenchmark() {
           ["3", "Enable monitoring-minimum.md alerts and SIEM field mapping table"],
           ["4", "Schedule weekly feedback-loop.md sessions and demo-golden-path.md dry run"],
           ["5", "Complete backup-and-restore.md exercise before production subset (if in scope)"],
+        ]}
+      />
+
+      <H2>Long-term documentation governance</H2>
+      <Table
+        headers={["Practice", "Detail"]}
+        rows={[
+          ["Single source", "Edit root docs/ only; keep aion/docs pointers for deprecated mirror paths"],
+          ["Index first", "Add new hubs to docs/README.md and link from Trust Center when enterprise-relevant"],
+          ["Link checks", "Run cargo test -p aion-cli test_docs_links before merge"],
+          ["Terminology", "Use the glossary block in docs/README.md for capsule, evidence, replay, drift, OTel, attestation, SBOM"],
         ]}
       />
 
