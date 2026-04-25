@@ -79,3 +79,7 @@ sealrun measure evidence
 - Device-code login is the canonical CLI auth flow.
 - Auth status and logout must be included in operational checklists.
 - Tokens are local-session artifacts and should be protected by endpoint controls.
+
+## Unified enterprise terminology
+
+For cross-team reviews, align language with [Trust Center](trust-center.md): **capsule**, **replay**, **drift**, **evidence chain**, **governance decision**, **policy evaluation**, **tenant isolation**, **RBAC**, **OIDC**, **SIEM**, **OpenTelemetry (OTel)**, **attestation**, **SBOM**, **Cosign**, and **Sigstore**. Detective controls should consume the same field names your **SIEM** / **OTel** pipelines expose for tenant and policy correlation.

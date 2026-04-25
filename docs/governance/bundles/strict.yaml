@@ -1,3 +1,4 @@
+# Strict governance bundle — adds release_attestation_id to required evidence fields
 name: strict
 version: 1.0.0
 controls:

@@ -1,19 +1,28 @@
-# Public Roadmap
+# Public roadmap
+
+## Overview
+
+Forward-looking themes for SealRun enterprise programs: **tenant isolation**, deterministic **capsules**, **replay** and **drift**, **evidence chain** quality, **RBAC**, **OIDC**, **SIEM** / **OTel**, and **Cosign** / **Sigstore** **attestation** with **SBOM** transparency. Dates are directional, not commitments.
 
 ## 2026 Q2
 
-- Enterprise compliance artifacts and trust-center expansion
-- Tenant lifecycle controls and evidence query workflows
-- OIDC and RBAC operational hardening
+- Expand trust-center and buyer-facing procurement packs tied to `docs/trust-center.md` and `docs/buyer-guide.md`.
+- Deepen tenant lifecycle and evidence query documentation; align runbooks with SLA targets.
+- Operational hardening guides for OIDC device flow and RBAC export automation.
 
 ## 2026 Q3
 
-- Production reference publishing and buyer onboarding packs
-- Governance bundle expansion for regulated deployments
-- Integration enablement guides and validation kits
+- Publish more reference architectures for adapter integrations (Hugging Face, LangChain, Modal, BentoML) with shared **policy evaluation** patterns.
+- Expand governance bundles for regulated finance and healthcare scenarios; strengthen compliance test suite examples.
+- Ship or document validation kits that exercise **replay** and **drift** in CI for ecosystem partners.
 
 ## 2026 Q4
 
-- Advanced reporting and policy orchestration improvements
-- Expanded ecosystem interoperability and migration tooling
-- Compliance evidence automation improvements
+- Reporting and policy orchestration improvements for large fleets of tenants.
+- Broader ecosystem interoperability and migration tooling for legacy AI pipelines.
+- Additional automation for audit evidence linking **release attestation** IDs into governed runs.
+
+## How to engage
+
+- File product feedback through your commercial channel or open-source tracker as applicable.
+- Reference `docs/compatibility-matrix.md` for supported version anchors when planning upgrades.

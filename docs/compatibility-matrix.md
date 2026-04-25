@@ -40,13 +40,20 @@ sealrun dist identity
 
 ## Enterprise-readiness
 
-Compatibility is enterprise-ready when supported version combinations remain deterministic, documented, and test-covered.
+Compatibility is enterprise-ready when supported version combinations remain deterministic, documented, and test-covered. Enterprise reviews should additionally confirm:
 
-## Integration readiness
+- **Tenant isolation** and storage schemas (`tenant.json`, `capsules.index.json`, `evidence.index.json`) match the deployed product version.
+- **RBAC** policy file (`rbac.policy.yaml`) and **OIDC** IdP settings are versioned with the release record.
+- **Replay** and **drift** baselines are regenerated when capsule or policy versions advance.
+- **SIEM** / **OTel** field mappings remain stable or are migrated deliberately with consumer notification.
 
-Documented integration scaffolds are maintained for:
+## Integration readiness (ecosystem scaffolds)
 
-- HuggingFace
-- LangChain
-- Modal
-- BentoML
+Documented adapter guides (shared structure: overview, architecture, flows, evidence, policy, integration, compliance, next steps) are maintained for:
+
+- [Hugging Face](integrations/huggingface-adapter-guide.md)
+- [LangChain](integrations/langchain-adapter-guide.md)
+- [Modal](integrations/modal-adapter-guide.md)
+- [BentoML](integrations/bentoml-adapter-guide.md)
+
+Governance baselines for **policy evaluation** are documented under `docs/governance/bundles/` with validation guidance in [Governance compliance test suite](governance/compliance-test-suite.md). Release integrity references [Release attestation](release-attestation.md) for **Cosign** / **Sigstore** and **SBOM** outputs.

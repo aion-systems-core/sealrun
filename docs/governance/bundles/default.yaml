@@ -1,3 +1,4 @@
+# Baseline governance bundle — convert to policy JSON per docs/governance/compliance-test-suite.md and docs/policy-engine.md
 name: default
 version: 1.0.0
 controls:

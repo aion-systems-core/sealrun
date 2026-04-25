@@ -73,6 +73,16 @@ Purge is blocked when legal hold is enabled. Operations teams should use legal h
 
 Operational **readiness** is the conjunction of: stable contract snapshots, successful replay on reference workloads, acceptable drift against baselines, and no critical gaps in `doctor` and measurement outputs. Exact finality fields are defined in [OS contract spec](os_contract_spec.md).
 
+## Enterprise documentation map (determinism, evidence, governance)
+
+Use these when tying SRE workflows to **tenant isolation**, **RBAC**, **OIDC**, **replay**, **drift**, the **evidence chain**, **SIEM** / **OTel**, and **Cosign** / **Sigstore** **attestation** with **SBOM** archives:
+
+- [Trust Center](trust-center.md) — consolidated capability and evidence sources
+- [Multi-tenancy](multi-tenancy.md), [Lifecycle controls](lifecycle-controls.md), [RBAC](rbac.md), [OIDC auth](oidc-auth.md)
+- [SIEM and OTel](siem-otel.md), [Release attestation](release-attestation.md), [Policy engine](policy-engine.md)
+- Runbooks: `docs/runbooks/` — replay failure, drift anomaly, evidence corruption, tenant isolation, exporter failure
+- SLA and escalation: [SLA](sla.md), [Support escalation path](support-escalation-path.md), [Status page template](status-page-template.md)
+
 ## Related
 
 - [Architecture](architecture.md)
