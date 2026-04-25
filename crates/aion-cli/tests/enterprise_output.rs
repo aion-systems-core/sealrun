@@ -39,12 +39,18 @@ fn enterprise_outputs_are_structured() {
         .is_some());
     assert!(nested_data(&read_data(&attestation)).get("sbom").is_some());
     assert!(nested_data(&read_data(&otel)).get("otel_profile").is_some());
-    assert!(nested_data(&read_data(&sinks)).get("supported_sinks").is_some());
-    assert!(nested_data(&read_data(&policy_api)).get("endpoints").is_some());
+    assert!(nested_data(&read_data(&sinks))
+        .get("supported_sinks")
+        .is_some());
+    assert!(nested_data(&read_data(&policy_api))
+        .get("endpoints")
+        .is_some());
     assert!(nested_data(&read_data(&policy_api))
         .get("governance_model")
         .is_some());
-    assert!(nested_data(&read_data(&refs)).get("pilot_references").is_some());
+    assert!(nested_data(&read_data(&refs))
+        .get("pilot_references")
+        .is_some());
 }
 
 #[test]
@@ -59,11 +65,14 @@ fn enterprise_tenant_lifecycle_and_rbac_outputs_are_structured() {
 
     let create = output_bundle::write_enterprise_tenants_create_output("tenant1").expect("create");
     let list = output_bundle::write_enterprise_tenants_list_output().expect("list");
-    let retention =
-        output_bundle::write_enterprise_lifecycle_retention_set_output("tenant1", 7).expect("retention");
-    let hold = output_bundle::write_enterprise_lifecycle_legal_hold_output("tenant1", true).expect("hold");
-    let rbac = output_bundle::write_enterprise_rbac_assign_output("alice", "admin").expect("rbac assign");
-    let check = output_bundle::write_enterprise_rbac_check_output("alice", "tenant-admin").expect("rbac check");
+    let retention = output_bundle::write_enterprise_lifecycle_retention_set_output("tenant1", 7)
+        .expect("retention");
+    let hold =
+        output_bundle::write_enterprise_lifecycle_legal_hold_output("tenant1", true).expect("hold");
+    let rbac =
+        output_bundle::write_enterprise_rbac_assign_output("alice", "admin").expect("rbac assign");
+    let check = output_bundle::write_enterprise_rbac_check_output("alice", "tenant-admin")
+        .expect("rbac check");
     let export = output_bundle::write_enterprise_rbac_export_output().expect("rbac export");
 
     assert!(nested_data(&read_data(&create)).get("tenant").is_some());

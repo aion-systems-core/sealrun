@@ -8,8 +8,8 @@ pub mod capsule;
 pub mod capture;
 pub mod ci;
 pub mod diff;
-pub mod events;
 pub mod enterprise;
+pub mod events;
 #[cfg(feature = "ffi")]
 pub mod ffi;
 pub mod governance;

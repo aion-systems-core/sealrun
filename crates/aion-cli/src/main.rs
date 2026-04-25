@@ -365,8 +365,12 @@ enum EnterpriseCliCommand {
 #[derive(Subcommand, Debug)]
 enum EnterpriseTenantsCommand {
     List,
-    Create { id: String },
-    Delete { id: String },
+    Create {
+        id: String,
+    },
+    Delete {
+        id: String,
+    },
     Capsules {
         #[command(subcommand)]
         command: EnterpriseTenantCapsulesCommand,
@@ -1873,7 +1877,8 @@ fn dispatch(cli: Cli, k: &impl KernelGateway) -> Result<u8, String> {
                 }
                 EnterpriseTenantsCommand::Capsules { command } => match command {
                     EnterpriseTenantCapsulesCommand::List { tenant } => {
-                        let p = output_bundle::write_enterprise_tenant_capsules_list_output(&tenant)?;
+                        let p =
+                            output_bundle::write_enterprise_tenant_capsules_list_output(&tenant)?;
                         print_output_path(p);
                         Ok(0)
                     }
@@ -1904,8 +1909,9 @@ fn dispatch(cli: Cli, k: &impl KernelGateway) -> Result<u8, String> {
             EnterpriseCliCommand::Lifecycle { command } => match command {
                 EnterpriseLifecycleCommand::Retention { command } => match command {
                     EnterpriseRetentionCommand::Get { tenant } => {
-                        let p =
-                            output_bundle::write_enterprise_lifecycle_retention_get_output(&tenant)?;
+                        let p = output_bundle::write_enterprise_lifecycle_retention_get_output(
+                            &tenant,
+                        )?;
                         print_output_path(p);
                         Ok(0)
                     }
@@ -1924,14 +1930,16 @@ fn dispatch(cli: Cli, k: &impl KernelGateway) -> Result<u8, String> {
                 }
                 EnterpriseLifecycleCommand::LegalHold { command } => match command {
                     EnterpriseLegalHoldCommand::Enable { tenant } => {
-                        let p =
-                            output_bundle::write_enterprise_lifecycle_legal_hold_output(&tenant, true)?;
+                        let p = output_bundle::write_enterprise_lifecycle_legal_hold_output(
+                            &tenant, true,
+                        )?;
                         print_output_path(p);
                         Ok(0)
                     }
                     EnterpriseLegalHoldCommand::Disable { tenant } => {
-                        let p =
-                            output_bundle::write_enterprise_lifecycle_legal_hold_output(&tenant, false)?;
+                        let p = output_bundle::write_enterprise_lifecycle_legal_hold_output(
+                            &tenant, false,
+                        )?;
                         print_output_path(p);
                         Ok(0)
                     }
@@ -1947,7 +1955,8 @@ fn dispatch(cli: Cli, k: &impl KernelGateway) -> Result<u8, String> {
                     subject,
                     permission,
                 } => {
-                    let p = output_bundle::write_enterprise_rbac_check_output(&subject, &permission)?;
+                    let p =
+                        output_bundle::write_enterprise_rbac_check_output(&subject, &permission)?;
                     print_output_path(p);
                     Ok(0)
                 }

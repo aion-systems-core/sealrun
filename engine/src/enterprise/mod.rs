@@ -125,8 +125,14 @@ pub fn tenant_create(tenant_id: &str) -> Result<TenantMeta, String> {
         legal_hold: false,
     };
     write_json_file(&tenant_meta_path(tenant_id)?, &meta)?;
-    write_json_file(&capsules_index_path(tenant_id)?, &Vec::<CapsuleRecord>::new())?;
-    write_json_file(&evidence_index_path(tenant_id)?, &Vec::<EvidenceRecord>::new())?;
+    write_json_file(
+        &capsules_index_path(tenant_id)?,
+        &Vec::<CapsuleRecord>::new(),
+    )?;
+    write_json_file(
+        &evidence_index_path(tenant_id)?,
+        &Vec::<EvidenceRecord>::new(),
+    )?;
     Ok(meta)
 }
 
@@ -525,7 +531,10 @@ pub fn cosign_sign(artifact: &Path) -> Result<String, String> {
         .output()
         .map_err(|e| format!("spawn cosign: {e}"))?;
     if !out.status.success() {
-        return Err(format!("cosign sign failed: {}", String::from_utf8_lossy(&out.stderr)));
+        return Err(format!(
+            "cosign sign failed: {}",
+            String::from_utf8_lossy(&out.stderr)
+        ));
     }
     Ok(String::from_utf8_lossy(&out.stdout).trim().to_string())
 }
@@ -601,7 +610,10 @@ pub fn policy_validate(policy: &GovernancePolicy) -> GovernanceEvalResult {
     }
 }
 
-pub fn policy_evaluate(policy: &GovernancePolicy, input: &GovernanceEvalInput) -> GovernanceEvalResult {
+pub fn policy_evaluate(
+    policy: &GovernancePolicy,
+    input: &GovernanceEvalInput,
+) -> GovernanceEvalResult {
     let mut violations = Vec::new();
     if !policy.allowed_models.iter().any(|m| m == &input.model) {
         violations.push("model_not_allowed".to_string());
@@ -637,4 +649,3 @@ pub fn write_secure_token_file(path: &Path, token: &OidcTokenStore) -> Result<()
     file.write_all(&body)
         .map_err(|e| format!("token write: {e}"))
 }
-

@@ -1,7 +1,8 @@
 use aion_engine::enterprise::{
-    self, evidence_query, lifecycle_purge, oidc_login, policy_evaluate, policy_validate, rbac_assign, rbac_check,
-    tenant_capsule_list, tenant_capsule_register, tenant_create, tenant_delete, tenant_list, GovernanceEvalInput,
-    GovernancePolicy, OidcConfig, Permission, Role, SinkConfig,
+    self, evidence_query, lifecycle_purge, oidc_login, policy_evaluate, policy_validate,
+    rbac_assign, rbac_check, tenant_capsule_list, tenant_capsule_register, tenant_create,
+    tenant_delete, tenant_list, GovernanceEvalInput, GovernancePolicy, OidcConfig, Permission,
+    Role, SinkConfig,
 };
 use std::collections::BTreeMap;
 use std::io::{Read, Write};
@@ -135,9 +136,18 @@ fn sinks_and_otel_exporters_send_http() {
             token: "token".into(),
         };
         let event = serde_json::json!({"kind":"test"});
-        assert_eq!(enterprise::send_splunk_hec(&cfg, &event).expect("splunk"), 200);
-        assert_eq!(enterprise::send_datadog_logs(&cfg, &event).expect("dd"), 200);
-        assert_eq!(enterprise::send_elastic_ingest(&cfg, &event).expect("elastic"), 200);
+        assert_eq!(
+            enterprise::send_splunk_hec(&cfg, &event).expect("splunk"),
+            200
+        );
+        assert_eq!(
+            enterprise::send_datadog_logs(&cfg, &event).expect("dd"),
+            200
+        );
+        assert_eq!(
+            enterprise::send_elastic_ingest(&cfg, &event).expect("elastic"),
+            200
+        );
         assert_eq!(
             enterprise::export_otel(&format!("http://{}", addr), &event).expect("otel"),
             200

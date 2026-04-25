@@ -55,8 +55,8 @@ use aion_core::{
     TrustChainInput, UpgradeMigrationContract, UpgradePath, UpgradeReplayContract,
     UpgradeReplayInput, VulnerabilityReport, VulnerabilitySeverity,
 };
-use aion_engine::events::{store_from_run, EventStreamFile};
 use aion_engine::enterprise;
+use aion_engine::events::{store_from_run, EventStreamFile};
 use aion_engine::governance::GovernanceReport;
 use aion_engine::graph::causal_graph_from_run_json;
 use aion_engine::output::{html, svg, OutputWriter};
@@ -2947,7 +2947,10 @@ pub fn write_enterprise_release_attestation_output() -> Result<std::path::PathBu
             digest_sha256: build.fingerprint.build_sha256.clone(),
         }],
         ProvenancePredicate {
-            build_environment: vec!["SOURCE_DATE_EPOCH=0".into(), "RUSTFLAGS=-Cdebuginfo=0".into()],
+            build_environment: vec![
+                "SOURCE_DATE_EPOCH=0".into(),
+                "RUSTFLAGS=-Cdebuginfo=0".into(),
+            ],
             build_steps: vec!["build".into(), "test".into(), "sign".into(), "sbom".into()],
             inputs: vec!["Cargo.lock".into(), "docs/os_contract_spec.md".into()],
             outputs: vec!["sealrun".into()],
