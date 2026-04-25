@@ -1,6 +1,22 @@
-﻿# Why & causal graph
+# Why & causal graph
 
-SealRun Execution OS attaches a structured **Why** report and a **causal graph** to AI capsules so runs are explainable without opening proprietary model weights.
+## Purpose
+
+Document **explainability artefacts** (`why.html`, `why.svg`, replay **why-diff** projections), how they tie to **replay symmetry** and **drift detection**, and how to regenerate them via **`sealrun observe graph`** and **`sealrun sdk explain`**.
+
+SealRun attaches a structured **Why** report and a **causal graph** to AI capsules so runs are explainable without opening proprietary model weights.
+
+## Explainability artefacts
+
+| Artefact | Produced by | Role |
+|----------|----------------|------|
+| `why.html` | `execute ai` | Tabular Why + embedded causal graph for review in a browser |
+| `why.svg` | `execute ai` | Standalone causal graph vector |
+| `why_diff.html` / `why_diff.svg` | `execute ai-replay` | Deterministic diff of Why payloads between original and replayed capsule views |
+| `sealrun observe graph` | CLI | Renders graph projections from a `RunResult` JSON path (format/depth flags) |
+| `sealrun sdk explain` | CLI/SDK | Emits explain bundle JSON/HTML/SVG from a **`capsule.aionai`** path |
+
+Drift JSON/HTML may reference graph/Why slices as part of deterministic field classification ([Drift](drift.md)).
 
 ## At a glance
 
@@ -10,44 +26,34 @@ SealRun Execution OS attaches a structured **Why** report and a **causal graph**
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
+This is a deliberate design choice: SealRun is a deterministic execution engine, not a Security-Sandbox-OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
 
 ---
-
-## Outputs
-
-After `execute ai`, you typically receive:
-
-- `why.html` â€” tables for prompt, token, seed/determinism influence plus embedded graph SVG  
-- `why.svg` â€” standalone causal graph  
-- `ai.html` / capsule JSON â€” includes the same structures for tooling  
-
-Replay adds **why diff** artefacts when you run `execute ai-replay`.
 
 ## CLI
 
 ```bash
-cargo run -p aion-cli -- execute ai --model m --prompt "a b" --seed 1
-# open aion_output/ai/<ts>/why.html in a browser
+sealrun execute ai --model m --prompt "a b" --seed 1
+# open sealrun_output/ai/<ts>/why.html in a browser
 ```
 
 `observe graph` supports format/depth controls:
 
 ```bash
-cargo run -p aion-cli -- observe graph path/to/run.json --format dot --depth 20
+sealrun observe graph path/to/run.json --format dot --depth 20
 ```
 
 ## Explain bundle (SDK)
 
 ```bash
-cargo run -p aion-cli -- sdk explain --capsule path/to/capsule.aionai
+sealrun sdk explain --capsule path/to/capsule.aionai
 ```
 
 ## Contract surface
@@ -67,10 +73,10 @@ sealrun sdk explain --capsule path/to/capsule.aionai
 ## ASCII sketch
 
 ```
-  prompt segments â”€â”€â”
-                    â”œâ”€â”€â–º token_0 â”€â”€â–º token_1 â”€â”€â–º â€¦
-  seed â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-  determinism â”€â”€â”€â”€â”€â”€â”˜
+  prompt segments ──┐
+                    ├──► token_0 ──► token_1 ──► …
+  seed ─────────────┤
+  determinism ──────┘
 ```
 
 ## Related

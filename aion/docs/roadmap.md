@@ -1,4 +1,4 @@
-# Roadmap und Meilensteine (Plan §8)
+# Roadmap and Milestones (Plan §8)
 
 ---
 
@@ -13,26 +13,26 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 
 ---
 
-## 8.1 Kurzfristig (0–3 Monate)
+## 8.1 Short term (0-3 months)
 
-- [ ] Open‑Source‑Launch (HN, Reddit)
-- [ ] Feedback aus der Community sammeln und priorisieren
-- [ ] Bugfixes und Stabilitätsverbesserungen
-- [ ] Erste Version der Enterprise‑Website mit Preisen
-- [ ] Beta‑Programm mit 3–5 Unternehmen starten
+- [ ] Open-source launch (HN, Reddit)
+- [ ] Collect and prioritize community feedback
+- [ ] Bug fixes and stability improvements
+- [ ] First version of the enterprise website with pricing
+- [ ] Launch beta program with 3-5 companies
 
-## 8.2 Mittelfristig (3–9 Monate)
+## 8.2 Mid term (3-9 months)
 
-- [ ] **Secure Runtime** implementieren (FS‑/Netz‑Isolation via Landlock/seccomp)
-- [ ] **Governance Pack** fertigstellen (Compliance‑Exports, Policy‑Editor)
-- [ ] **CI/CD Pack** mit GitHub Action und GitLab CI‑Komponente
-- [ ] Erste zahlende Kunden onboarden
-- [ ] Sprecher‑Slot auf einer Konferenz (RustConf, KubeCon)
+- [ ] Implement **Secure Runtime** (filesystem/network isolation via Landlock/seccomp)
+- [ ] Complete **Governance Pack** (compliance exports, policy editor)
+- [ ] Deliver **CI/CD Pack** with GitHub Action and GitLab CI component
+- [ ] Onboard first paying customers
+- [ ] Secure a speaker slot at a conference (RustConf, KubeCon)
 
-## 8.3 Langfristig (9–18 Monate)
+## 8.3 Long term (9-18 months)
 
-- [ ] **Enterprise Dashboard** (Web‑UI) als optionales Add‑on
-- [ ] Integration mit **SPIFFE/SPIRE** für Workload‑Identität
-- [ ] **Micro‑VM‑Mode** (Firecracker, Cloud Hypervisor) für höchste Isolation
-- [ ] **SOC2 / ISO27001** Zertifizierung des Unternehmens (für Enterprise‑Sales)
-- [ ] Ausbau des Teams (1–2 Entwickler, 1 Sales/Support)
+- [ ] Build **Enterprise Dashboard** (web UI) as an optional add-on
+- [ ] Integrate **SPIFFE/SPIRE** for workload identity
+- [ ] Add **Micro-VM mode** (Firecracker, Cloud Hypervisor) for stronger isolation
+- [ ] Achieve **SOC2 / ISO27001** company certification (for enterprise sales)
+- [ ] Expand the team (1-2 engineers, 1 sales/support)

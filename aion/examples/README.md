@@ -13,4 +13,4 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 
 ---
 
-`examples/` — Beispiel‑Skripte (Plan §5.1).
+`examples/` — example scripts (Plan §5.1).

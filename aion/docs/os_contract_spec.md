@@ -1,28 +1,32 @@
-﻿# OS Contract Spec
+# OS Contract Spec
 
-This specification is the canonical contract definition for SealRun Execution OS kernel-layer and enterprise-layer behavior.
+## Purpose
 
-spec_id: `aion-os-contract`
+Normative reference for **deterministic JSON envelopes**, finality, versioning, and contract IDs. Implementation and tests should trace to sections here.
+
+This specification is the canonical contract definition for SealRun kernel-layer and enterprise-layer behavior.
+
+spec_id: `SealRun-contract`
 spec_version_source: `sha256(docs/os_contract_spec.md)`
 serialization: `deterministic_json`
 
 ## At a glance
 
-- Contract model: Execution-OS kernel contracts + enterprise-layer contracts
+- Contract model: deterministic execution engine kernel contracts + enterprise-layer contracts
 - Finality model: run, capsule, evidence, replay finality rules
 - Version model: deterministic spec hash ID, versioned contract surfaces
 - Output model: deterministic JSON envelope and error contracts
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
 The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
 
-This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
+This is a deliberate design choice: SealRun is an Execution‑OS, not a Security‑Sandbox‑OS.  
 Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
+If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
 
 ---
 

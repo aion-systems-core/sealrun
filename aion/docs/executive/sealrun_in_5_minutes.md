@@ -1,53 +1,56 @@
-# SealRun in 5 Minuten (Executive Summary)
+# SealRun in 5 Minutes (Executive Summary)
 
-## Purpose (EN)
+## Purpose
 
-Five-minute **executive** orientation: deterministic execution, contract controls, and why SealRun is an **Execution-OS** (contracts) rather than a sandbox OS—before deeper reading in [Architecture](../architecture.md).
-
-SealRun ist eine deterministische Ausführungs-Engine mit Contract-Layer-Steuerfläche für KI-Ausführung.
+A five-minute executive orientation covering deterministic execution, contract controls, and why SealRun is an **Execution OS** (contract layer) rather than a sandbox OS.  
+For deeper detail, see [Architecture](../architecture.md).
 
 ## At a glance
 
-- Deterministische Ausführung: gleiche Eingaben -> prüfbare Ergebnisse
-- Contract-first Steuerung: Replay, Drift, Evidence, Governance, Measurement
-- Enterprise-readiness über Phase-1-12 Vertragsmodell
+- Deterministic execution: identical inputs -> verifiable outputs
+- Contract-first control surface: replay, drift, evidence, governance, measurement
+- Enterprise readiness via the phase 1-12 contract model
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and audit‑grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection, and audit-grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
-The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
+Kernel isolation modules are contract surfaces only; they define interfaces but do not impose isolation.
 
-This is a deliberate design choice: SealRun is a deterministic execution engine, not a Security-Sandbox-OS.  
-Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
+This is a deliberate design choice: SealRun is a deterministic execution engine, not a security sandbox OS.  
+Because SealRun does not modify kernel privileges or intercept syscalls, it can be adopted in existing environments without admin rights and without operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro‑VM isolation in a future "SealRun Secure Runtime" module — without breaking compatibility.
+If isolation is required (for example in regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro-VM isolation in a future "SealRun Secure Runtime" module without breaking compatibility.
 
 ---
 
-## Was ist SealRun?
+## What is SealRun?
 
-SealRun ist eine **deterministische Ausführungsschicht für KI‑Runs**: Jeder Lauf wird als **Capsule** festgehalten — mit Token‑Spur, Evidenz‑Kette, Erklärbarkeit (Why), Kausalgraph und Governance‑Prüfungen.
+SealRun is a **deterministic execution layer for AI runs**: each run is captured as a **capsule** with token trace, evidence chain, explainability (Why), causal graph, and governance checks.
 
-## Warum deterministisch?
+## Why deterministic?
 
-Weil **gleiche Eingaben (Modell, Prompt, Seed, eingefrorene Laufzeitparameter)** **überprüfbare** Ergebnisse liefern: Regressionstests, Abnahme in regulierten Umgebungen und **technische Nachvollziehbarkeit** werden möglich, statt „Black Box plus Logfile“.
+Because **identical inputs** (model, prompt, seed, frozen runtime controls) produce **verifiable** outcomes.  
+This enables reliable regression testing, controlled acceptance in regulated environments, and technical traceability instead of "black box + log file."
 
-## Warum auditierbar?
+## Why auditable?
 
-Weil Artefakte **strukturiert** (JSON/HTML/SVG) exportiert werden und sich an **Replay**, **Drift** und **Policy‑Validation** koppeln lassen — ein Audit kann auf **Maschinenprüfungen** statt auf Screenshots bauen.
+Because artifacts are exported in **structured** formats (JSON/HTML/SVG) and can be bound to **replay**, **drift**, and **policy validation** checks.  
+Audits can rely on machine-verifiable contracts instead of screenshots.
 
-## Warum evidence‑fähig?
+## Why evidence-capable?
 
-Weil eine **lineare Evidenzkette** mit rollierenden Digest‑Schritten integriert ist: Integrität ist **kryptographisch gebunden**, nicht nur eine Zeile im Textlog.
+Because SealRun includes a **linear evidence chain** with rolling digest links.  
+Integrity is cryptographically bound, not just text-log metadata.
 
-## Warum modell‑agnostisch?
+## Why model-agnostic?
 
-Weil der Vertrag auf **aufgezeichneten Runs** und **Backends** basiert, die das Determinismus‑Envelope respektieren — nicht auf einem einzelnen Closed‑Source‑SDK.
+Because contracts are defined over **recorded runs** and **backends** that respect the determinism envelope, not over a single closed-source SDK.
 
-## Warum OS statt Framework?
+## Why OS instead of framework?
 
-Weil SealRun als **Schicht unterhalb der App** gedacht ist: **CLI**, **SDK**, Artefakt‑Pipelines, Governance und CI‑Anbindung — ein **Betriebssystem‑ähnliches** Fundament für verlässliche KI‑Ausführung, nicht nur eine Bibliotheksfunktion.
+Because SealRun is designed as an **under-application layer**: CLI, SDK, artifact pipelines, governance, and CI integration.  
+It is an OS-like foundation for reliable AI execution, not only a library feature.
 
 ## CLI surface
 
@@ -58,10 +61,10 @@ sealrun reliability status
 sealrun measure audits
 ```
 
-## Enterprise-readiness
+## Enterprise readiness
 
-SealRun ist enterprise-ready, wenn deterministische Contract-Ausgaben release-übergreifend stabil, auditierbar und ohne Drift in der Betriebsrealität bleiben.
+SealRun is enterprise-ready when deterministic contract outputs remain stable, auditable, and drift-resistant across releases and real operational environments.
 
 ---
 
-**Guided Link: SealRun in 5 Minuten** — Vertiefung: [Guided tour](../guided_tour.md) · [Compliance One-Pager](../compliance/sealrun_compliance_onepager.md) · [Evidence model](../evidence/evidence_model.md)
+**Guided link:** [Guided tour](../guided_tour.md) · [Compliance One-Pager](../compliance/sealrun_compliance_onepager.md) · [Evidence model](../evidence/evidence_model.md)

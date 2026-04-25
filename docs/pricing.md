@@ -1,80 +1,80 @@
 # SealRun Pricing
 
-SealRun ist Open Source ([MIT License](../LICENSE)).  
-Kommerzielle Pakete sind optional und richten sich an Teams mit Compliance-, Audit- oder Governance-Anforderungen.
+SealRun is open source under the [MIT License](../LICENSE).  
+Commercial packages are optional and intended for teams with compliance, audit, or governance requirements.
 
-## Community Support (kostenlos)
+## Community support (free)
 
-- **Kanal:** GitHub Issues und Discussions  
-- **Antwortzeiten:** Best Effort (kein SLA)  
-- In der Praxis antworten wir in der Regel innerhalb von 24 Stunden, ohne Zusage.
-
----
-
-## Basic — €1.900 / Jahr
-
-Für kleine Teams, OSS-Nutzer und Startups.
-
-- Evidence Retention (lokal)
-- Audit Exports (JSON)
-- Keine Nutzerbegrenzung
-- Community Support (GitHub Issues / Discussions)
-- Kein SLA, kein Priority Support
+- **Channel:** GitHub Issues and Discussions  
+- **Response time:** Best effort (no SLA)  
+- Typical response time is around 24 hours, without contractual commitment.
 
 ---
 
-## Team — €4.900 / Jahr
+## Basic — EUR 1,900 / year
 
-Für Teams bis **5 Nutzer**.
+For small teams, OSS users, and startups.
 
-- Alles aus **Basic**
-- Priority E-Mail Support
-- Governance Basics
-- Retention Policies
-- Bis zu **5 Nutzer** inklusive  
-- Zusätzliche Nutzer: auf Anfrage (Add-on)
-
-**Logik Basic → Team:** Support-Priorität, Governance-Grundfunktionen, Retention-Policies und ein klarer Nutzer-Rahmen (5 Seats).
+- Local evidence retention
+- Audit exports (JSON)
+- No user limit
+- Community support (GitHub Issues / Discussions)
+- No SLA and no priority support
 
 ---
 
-## Enterprise — €9.900 / Jahr
+## Team — EUR 4,900 / year
 
-Für größere Teams, Compliance-Abteilungen und regulierte Branchen.
+For teams with up to **5 users**.
 
-- Alles aus **Team**
-- **Unbegrenzte** Nutzer
-- Compliance-Integrationen (auf Anfrage abgestimmt)
-- Custom Retention Policies
-- Audit-Ready Evidence Bundles (Export-Pakete für Reviews)
-- Dedicated Support Channel (z. B. dedizierter Kommunikationskanal nach Vereinbarung)
+- Everything in **Basic**
+- Priority email support
+- Governance basics
+- Retention policies
+- Up to **5 users** included
+- Additional users available as add-ons (on request)
 
-**Logik Team → Enterprise:** unbegrenzte Seats, tiefere Compliance-/Integrationsunterstützung, maßgeschneiderte Retention und stärkere Audit-Artefakte.
-
-### SLA (optional, + €2.500 / Jahr)
-
-- **4 h** Response, **8 h** Resolution, **Business Hours** (CET)  
-- Gilt für **kritische** Bugs, Drift-Fehler, Replay-Mismatch und Governance-/Evidence-Exporte (im vereinbarten Umfang; Details im Supportvertrag).
+**Basic -> Team rationale:** adds support priority, governance baseline features, retention controls, and a defined 5-seat team envelope.
 
 ---
 
-## Pilot-Programm (limitiert)
+## Enterprise — EUR 9,900 / year
 
-**€2.900 für 6 Monate** — auf die **ersten 3 Teams** begrenzt.
+For larger teams, compliance groups, and regulated industries.
 
-Enthält:
+- Everything in **Team**
+- **Unlimited** users
+- Compliance integrations (scoped by agreement)
+- Custom retention policies
+- Audit-ready evidence bundles (review/export packages)
+- Dedicated support channel (as agreed)
 
-- Team-Features (wie **Team**-Paket, für die Pilotlaufzeit)
-- **2** technische Deep-Dive-Gespräche
-- **1** Drift-Analyse (Scope gemeinsam definiert)
+**Team -> Enterprise rationale:** unlimited seats, deeper compliance/integration support, custom retention, and stronger audit deliverables.
 
-Ziel: schneller produktiver Einstieg ohne sofortige Jahresbindung; Übergang in ein Jahrespaket nach Abschluss möglich.
+### SLA (optional, + EUR 2,500 / year)
+
+- **4h** response, **8h** resolution, business hours (CET)
+- Covers critical bugs, drift errors, replay mismatches, and governance/evidence exports within contract scope.
 
 ---
 
-## Kontakt
+## Pilot program (limited)
 
-**Kaufanfragen, technische Gespräche, Enterprise-Pilots:**  
+**EUR 2,900 for 6 months**, limited to the **first 3 teams**.
+
+Includes:
+
+- Team features for the pilot duration
+- **2** technical deep-dive sessions
+- **1** drift analysis (scope agreed jointly)
+
+Goal: accelerated production onboarding without immediate annual commitment; optional conversion into an annual package after pilot completion.
+
+---
+
+## Contact
+
+**Sales inquiries, technical conversations, enterprise pilots:**  
 [contact.sealrun@gmail.com](mailto:contact.sealrun@gmail.com)
 
-**Sicherheitsmeldungen** (nicht für Sales): siehe [SECURITY.md](../SECURITY.md).
+**Security reports** (not sales): see [SECURITY.md](../SECURITY.md).

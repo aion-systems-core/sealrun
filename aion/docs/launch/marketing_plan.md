@@ -1,72 +1,72 @@
-﻿# Marketingâ€‘ und Launchâ€‘Plan (Plan Â§7)
+﻿# Marketing and Launch Plan (Plan §7)
 
 ---
 
-SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
+SealRun guarantees deterministic execution, replay symmetry, drift detection, and audit-grade evidence chains.  
 SealRun intentionally does not enforce filesystem or network isolation.  
-The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
+Kernel isolation modules are contract surfaces only; they define interfaces but do not impose isolation.
 
-This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
-Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
+This is a deliberate design choice: SealRun is an Execution OS, not a security sandbox OS.  
+Because SealRun does not modify kernel privileges or intercept syscalls, it can be adopted without admin rights and with minimal operational friction.
 
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
+If isolation is required (for example in regulated industries), the same contract surfaces can be backed by seccomp/landlock/micro-VM isolation in a future "SealRun Secure Runtime" module without breaking compatibility.
 
 ---
 
-## 7.1 Phase 0: Vorbereitung (1â€“2 Wochen)
+## 7.1 Phase 0: Preparation (1-2 weeks)
 
-**Ziele:** Repository vorbereiten, Dokumentation schreiben, Website erstellen.
+**Goal:** prepare the repository, documentation, and website.
 
-| Aufgabe | Verantwortlich | Status |
+| Task | Owner | Status |
 | :--- | :---: | :---: |
-| Ã–ffentliches GitHubâ€‘Repo anlegen (MITâ€‘Lizenz) | Du | â¬œ |
-| `README.md` nach Vorlage (Anhang 11.1) schreiben | Du | â¬œ |
-| `os_contract_spec.md` als separates Dokument aufbereiten | Du | â¬œ |
-| Einfache Landingpage (`aion.sh` oder `aion.dev`) mit Tailwind/Carrd | Du | â¬œ |
-| Twitter/Xâ€‘Account `@aion_os` erstellen | Du | â¬œ |
-| LinkedInâ€‘Profil optimieren | Du | â¬œ |
+| Create public GitHub repo (MIT license) | You | done |
+| Write `README.md` from template (Appendix 11.1) | You | done |
+| Prepare `os_contract_spec.md` as a standalone document | You | done |
+| Build simple landing page (`aion.sh` or `aion.dev`) with Tailwind/Carrd | You | done |
+| Create Twitter/X account `@aion_os` | You | done |
+| Optimize LinkedIn profile | You | done |
 
-## 7.2 Phase 1: Hacker News Launch (Tag 1)
+## 7.2 Phase 1: Hacker News launch (day 1)
 
-**Ziel:** Maximale Sichtbarkeit in der Entwicklerâ€‘Community, erste GitHub Stars, Feedback.
+**Goal:** maximize visibility in the developer community, gain first GitHub stars, and collect feedback.
 
-| Plattform | Aktion | Zeitpunkt |
+| Platform | Action | Timing |
 | :--- | :--- | :--- |
-| **Hacker News** | â€žShow HN: SealRun â€“ Deterministic Execution OS & Evidence Fabric for AI Agentsâ€œ | Diâ€“Do, 15â€“16 Uhr MEZ |
-| **Reddit** | Post in `/r/rust` und `/r/programming` | 1â€“2 Stunden nach HN |
-| **Twitter/X** | AnkÃ¼ndigung mit Link zum HNâ€‘Post | Parallel |
-| **LinkedIn** | PersÃ¶nlicher Post zur Motivation | Abends |
+| **Hacker News** | "Show HN: SealRun - Deterministic Execution OS & Evidence Fabric for AI Agents" | Tue-Thu, 15:00-16:00 CET |
+| **Reddit** | Post in `/r/rust` and `/r/programming` | 1-2 hours after HN |
+| **Twitter/X** | Announcement with HN link | In parallel |
+| **LinkedIn** | Personal post describing motivation | Evening |
 
-**HNâ€‘Postâ€‘Text:** siehe `docs/launch/hacker_news_show_hn.md` (Plan Â§11.3).
+**HN launch text:** see `docs/launch/hacker_news_show_hn.md` (Plan §11.3).
 
-## 7.3 Phase 2: Contentâ€‘Marketing (Woche 2â€“4)
+## 7.3 Phase 2: Content marketing (weeks 2-4)
 
-**Ziel:** Langfristige Sichtbarkeit, SEO, Vertrauensaufbau.
+**Goal:** build long-term visibility, SEO, and credibility.
 
-| Inhalt | Plattform | Fokus |
+| Content | Platform | Focus |
 | :--- | :--- | :--- |
-| **Blogpost:** â€žWarum wir ein deterministisches OS fÃ¼r KI brauchenâ€œ | DEV.to, Hashnode | Problemâ€‘Bewusstsein |
-| **Blogpost:** â€žSealRun unter der Haube: Wie wir Subprozesse deterministisch machenâ€œ | Eigenes Blog | Technische Tiefe |
-| **YouTubeâ€‘Video:** 5â€‘Minutenâ€‘Demo von `sealrun execute` | YouTube | Visueller Beweis |
-| **Case Study (fiktiv):** â€žWie eine Bank SealRun fÃ¼r AIâ€‘Governance nutztâ€œ | Website | Enterpriseâ€‘Relevanz |
+| **Blog post:** "Why we need a deterministic OS for AI" | DEV.to, Hashnode | Problem awareness |
+| **Blog post:** "Inside SealRun: deterministic subprocess execution" | Owned blog | Technical depth |
+| **YouTube video:** 5-minute demo of `sealrun execute` | YouTube | Visual proof |
+| **Case study (fictional):** "How a bank uses SealRun for AI governance" | Website | Enterprise relevance |
 
-## 7.4 Phase 3: Outbound (Monat 2â€“6)
+## 7.4 Phase 3: Outbound (months 2-6)
 
-**Ziel:** Erste zahlende Kunden gewinnen.
+**Goal:** acquire first paying customers.
 
-| Aktion | Zielgruppe | Vorgehen |
+| Action | Target | Approach |
 | :--- | :--- | :--- |
-| **LinkedIn Outreach** | CTOs, CISOs von FinTechs | PersÃ¶nliche Nachricht mit Link zur Doku |
-| **Konferenzâ€‘Einreichungen** | RustConf, KubeCon, AIâ€‘Events | Talk Ã¼ber deterministische AusfÃ¼hrung |
-| **Guest Posts** | The New Stack, InfoQ | Gastbeitrag zu AIâ€‘Compliance |
-| **Betaâ€‘Programm** | 5â€“10 Unternehmen | Kostenlose Enterpriseâ€‘Lizenz im Austausch fÃ¼r Feedback |
+| **LinkedIn outreach** | CTOs, CISOs at fintech companies | Personal message with docs link |
+| **Conference submissions** | RustConf, KubeCon, AI events | Talk proposal on deterministic execution |
+| **Guest posts** | The New Stack, InfoQ | Article on AI compliance |
+| **Beta program** | 5-10 companies | Free enterprise license in exchange for feedback |
 
-## 7.5 Metriken und Erfolgskontrolle
+## 7.5 Metrics and success tracking
 
-| Metrik | Ziel (Monat 6) |
+| Metric | Goal (month 6) |
 | :--- | ---: |
-| GitHub Stars | > 500 |
-| Websiteâ€‘Besucher / Monat | > 2.000 |
-| Newsletterâ€‘Abonnenten | > 200 |
-| Enterpriseâ€‘Anfragen | > 20 |
-| Zahlende Kunden | > 3 |
+| GitHub stars | > 500 |
+| Website visitors / month | > 2,000 |
+| Newsletter subscribers | > 200 |
+| Enterprise inquiries | > 20 |
+| Paying customers | > 3 |

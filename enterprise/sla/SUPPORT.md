@@ -1,27 +1,27 @@
-# SLA & commercial support
+# SLA and Commercial Support
 
-Normative Produkt- und Vertragsdetails bleiben in den Repo-Docs (`docs/os_contract_spec.md`, `docs/architecture.md`).  
-**Preise, Pakete und optionales SLA** sind zentral dokumentiert unter:
+Normative product and contract semantics remain in repository docs (`docs/os_contract_spec.md`, `docs/architecture.md`).  
+**Pricing, package tiers, and the optional SLA add-on** are documented centrally in:
 
 - [SealRun Pricing](../../docs/pricing.md)
 
 ---
 
-## Optional SLA (Add-on)
+## Optional SLA (add-on)
 
-Wird typischerweise zum **Enterprise**-Paket gebucht: **+ €2.500 / Jahr**
+Typically purchased with the **Enterprise** package: **+ EUR 2,500 / year**
 
-| Aspekt | Definition |
+| Aspect | Definition |
 | :--- | :--- |
-| **Response** | 4 h (Business Hours CET) |
-| **Resolution** | 8 h (Business Hours CET) |
-| **Geltungsbereich** | Kritische Bugs, Drift-Fehler, Replay-Mismatch, Governance-/Evidence-Exporte (im vertraglich festgelegten Umfang) |
+| **Response** | 4h (business hours, CET) |
+| **Resolution** | 8h (business hours, CET) |
+| **Scope** | Critical bugs, drift errors, replay mismatches, governance/evidence exports (within contract scope) |
 
-Für zahlende Kunden wird ein **Software-Lizenz- und Support-Vertrag** geschlossen (Lizenzumfang, Nutzungsgrenzen, Haftung, SLA-Details).
+Paying customers receive a **software license and support agreement** covering license scope, usage constraints, liability boundaries, and SLA details.
 
 ---
 
-## Kontakt
+## Contact
 
 - **Sales / Pilot / Enterprise:** [contact.sealrun@gmail.com](mailto:contact.sealrun@gmail.com)  
-- **Security:** siehe [SECURITY.md](../../SECURITY.md) (keine öffentlichen Issues für Schwachstellen)
+- **Security:** see [SECURITY.md](../../SECURITY.md) (do not use public issues for vulnerabilities)

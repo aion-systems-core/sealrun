@@ -1,4 +1,4 @@
-# Hacker News „Show HN“ (Plan §11.3)
+# Hacker News "Show HN" (Plan §11.3)
 
 ---
 
@@ -13,13 +13,13 @@ If isolation is required (e.g., for regulated industries), the same contract sur
 
 ---
 
-**Titel:**
+**Title:**
 
 ```
 Show HN: SealRun – Deterministic Execution OS & Evidence Fabric for AI Agents
 ```
 
-**Erster Kommentar (sofort nach Posting):**
+**First comment (post immediately after publishing):**
 
 > Hi HN,
 > 

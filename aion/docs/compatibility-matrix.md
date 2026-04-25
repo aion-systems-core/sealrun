@@ -1,6 +1,10 @@
-﻿# Compatibility matrix
+# Compatibility matrix
 
-This matrix summarizes core version anchors for deterministic compatibility in SealRun Execution OS.
+## Purpose
+
+Single table of **version anchors** (product, CLI, capsule schema, Why schema, policy) for integrators validating deterministic compatibility.
+
+This matrix summarizes core version anchors for deterministic compatibility in SealRun.
 
 ## At a glance
 
@@ -8,22 +12,9 @@ This matrix summarizes core version anchors for deterministic compatibility in S
 - Capsule, Why, and policy versions are stable integration anchors.
 - Use doctor and distribution identity outputs for runtime validation.
 
----
-
-SealRun guarantees deterministic execution, replay symmetry, drift detection and auditâ€‘grade evidence chains.  
-SealRun intentionally does not enforce filesystem or network isolation.  
-The kernel isolation modules are contract surfaces only; they define the interface but do not restrict access.
-
-This is a deliberate design choice: SealRun is an Executionâ€‘OS, not a Securityâ€‘Sandboxâ€‘OS.  
-Because SealRun does not modify kernel privileges or intercept syscalls, it is safe to adopt in existing environments without admin rights, without risk to workloads, and without operational friction.
-
-If isolation is required (e.g., for regulated industries), the same contract surfaces can be backed by seccomp/landlock/microâ€‘VM isolation in a future "SealRun Secure Runtime" module â€” without breaking compatibility.
-
----
-
 | Component | Version |
 |-----------|---------|
-| SealRun Execution OS product | `VERSION` file |
+| SealRun product | `VERSION` file |
 | CLI binary | `sealrun --version` |
 | AI capsule schema | `version = "1"` |
 | Why schema | `why_schema_version = "2"` |
