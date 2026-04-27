@@ -152,6 +152,9 @@ jobs:
       - name: Lint (syntax)
         run: python -m py_compile sealrun_ai/*.py
 
+      - name: Install type stubs
+        run: pip install types-requests
+
       - name: Type check
         run: mypy --ignore-missing-imports sealrun_ai
 
