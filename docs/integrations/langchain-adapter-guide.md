@@ -38,10 +38,10 @@ This guide covers integrating **LangChain** chains and agents with SealRun so th
 ## Compliance notes
 
 - Tool use introduces third-party risk; align with `docs/policies/vendor-third-party-risk-policy.md`.
-- Map detective controls to CC-08 and CC-10 in `docs/compliance/controls-matrix.md`.
+- Map detective controls to CC-08 and CC-10 in `docs/enterprise/compliance/controls-matrix.md`.
 
 ## Next steps
 
 - Add integration tests that call `policy-api validate` / `evaluate` on representative chain descriptors.
-- Use `docs/templates/audit-evidence-drift-template.md` when promoting graph changes.
+- Use `docs/enterprise/templates/audit-evidence-drift-template.md` when promoting graph changes.
 - Hub: [Trust Center](../trust-center.md).

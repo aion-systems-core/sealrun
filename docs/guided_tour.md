@@ -18,8 +18,8 @@ This guide is the fast navigation map for the SealRun enterprise story across ph
 | 1 | **Architecture and contract model** | [architecture.md](architecture.md) |
 | 2 | **Formal contract specification** | [os_contract_spec.md](os_contract_spec.md) |
 | 3 | **Evidence model** | [evidence/evidence_model.md](evidence/evidence_model.md) |
-| 4 | **Compliance one-pager** | [compliance/sealrun_compliance_onepager.md](compliance/sealrun_compliance_onepager.md) |
-| 5 | **Pilot onboarding** | [pilot/00_install.md](pilot/00_install.md) |
+| 4 | **Compliance one-pager** | [enterprise/compliance/sealrun_compliance_onepager.md](enterprise/compliance/sealrun_compliance_onepager.md) |
+| 5 | **Pilot onboarding** | [enterprise/pilot/00_install.md](enterprise/pilot/00_install.md) |
 | 6 | **Executive brief (5 minutes)** | [executive/sealrun_in_5_minutes.md](executive/sealrun_in_5_minutes.md) |
 | 7 | **Enterprise sales package** | [enterprise/SealRun_Enterprise_Sales_Package.md](enterprise/SealRun_Enterprise_Sales_Package.md) |
 

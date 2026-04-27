@@ -24,14 +24,14 @@ Incidents use SEV1–SEV4 aligned to response targets in `docs/sla.md`. Security
 
 | Topic | Runbook |
 |-------|---------|
-| **Replay** failure | `docs/runbooks/incident-replay-failure.md` |
-| **Drift** anomaly | `docs/runbooks/incident-drift-anomaly.md` |
-| **Evidence** corruption | `docs/runbooks/incident-evidence-corruption.md` |
-| **Tenant isolation** attempt | `docs/runbooks/incident-tenant-isolation-breach-attempt.md` |
-| **SIEM** / **OTel** exporter | `docs/runbooks/incident-siem-otel-exporter-failure.md` |
+| **Replay** failure | `docs/enterprise/runbooks/incident-replay-failure.md` |
+| **Drift** anomaly | `docs/enterprise/runbooks/incident-drift-anomaly.md` |
+| **Evidence** corruption | `docs/enterprise/runbooks/incident-evidence-corruption.md` |
+| **Tenant isolation** attempt | `docs/enterprise/runbooks/incident-tenant-isolation-breach-attempt.md` |
+| **SIEM** / **OTel** exporter | `docs/enterprise/runbooks/incident-siem-otel-exporter-failure.md` |
 
 ## Compliance references
 
-- `docs/compliance/controls-matrix.md` (CC-12).
-- `docs/compliance/iso27001-annex-a-mapping.md` (incident management).
+- `docs/enterprise/compliance/controls-matrix.md` (CC-12).
+- `docs/enterprise/compliance/iso27001-annex-a-mapping.md` (incident management).
 - Status communications: `docs/status-page-template.md`.

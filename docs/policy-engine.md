@@ -8,7 +8,7 @@ The enterprise **policy engine** validates and evaluates deterministic governanc
 
 - **Validation:** Schema and rule-shape checks before evaluation (`policy-api validate`).
 - **Evaluation:** Deterministic pass/fail with structured violations (`policy-api evaluate`).
-- **Bundles:** YAML bundles under `docs/governance/bundles/` convert to JSON policy payloads for testing (see `docs/governance/compliance-test-suite.md`).
+- **Bundles:** YAML bundles under `docs/enterprise/governance/bundles/` convert to JSON policy payloads for testing (see `docs/enterprise/governance/compliance-test-suite.md`).
 
 ## Policy schema (JSON)
 
@@ -43,7 +43,7 @@ The enterprise **policy engine** validates and evaluates deterministic governanc
 
 - `validate` and `evaluate` command outputs (machine-readable).
 - **Governance decision** records referencing policy version and bundle name.
-- Templates: `docs/templates/audit-evidence-governance-decision-template.md`.
+- Templates: `docs/enterprise/templates/audit-evidence-governance-decision-template.md`.
 
 ## Policy enforcement points
 
@@ -59,12 +59,12 @@ The enterprise **policy engine** validates and evaluates deterministic governanc
 
 ## Compliance notes
 
-- Map to CC-10 in `docs/compliance/controls-matrix.md` and technological controls in `docs/compliance/iso27001-annex-a-mapping.md`.
+- Map to CC-10 in `docs/enterprise/compliance/controls-matrix.md` and technological controls in `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 - Exceptions to policy use `docs/policies/exceptions-policy.md` with compensating controls.
 
 ## Next steps
 
-- Run the compliance test suite flow: `docs/governance/compliance-test-suite.md`.
+- Run the compliance test suite flow: `docs/enterprise/governance/compliance-test-suite.md`.
 - Standardize adapter patterns: Hugging Face, LangChain, Modal, BentoML guides in `docs/integrations/`.
 - Hub: [Trust Center](trust-center.md).
 

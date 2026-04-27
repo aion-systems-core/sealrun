@@ -11,7 +11,7 @@ Covers security, compliance, and operational **exceptions** to documented contro
 ## Policy statements
 
 1. **Documentation:** Each **exception** includes business justification, scope, compensating controls, owner, and explicit end date.
-2. **Approval:** Security and the owning engineering manager approve material **exceptions**; regulatory programs may require additional approvers aligned to bundle fields such as `approver` / `reviewer` (`docs/governance/bundles/`).
+2. **Approval:** Security and the owning engineering manager approve material **exceptions**; regulatory programs may require additional approvers aligned to bundle fields such as `approver` / `reviewer` (`docs/enterprise/governance/bundles/`).
 3. **Time bounding:** **Exceptions** expire automatically; renewal requires fresh risk acceptance.
 4. **Non-compliance:** Expired **exceptions** without renewal are treated as non-compliant configurations and must be remediated or emergency-approved under incident policy.
 5. **Evidence:** **Exception** records link to tickets, **governance decision** artifacts, and monitoring proving compensating controls operated.
@@ -30,5 +30,5 @@ Covers security, compliance, and operational **exceptions** to documented contro
 
 ## Compliance references
 
-- `docs/compliance/controls-matrix.md`.
-- Audit template: `docs/templates/audit-evidence-governance-decision-template.md`.
+- `docs/enterprise/compliance/controls-matrix.md`.
+- Audit template: `docs/enterprise/templates/audit-evidence-governance-decision-template.md`.

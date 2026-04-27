@@ -9,14 +9,14 @@ Release **attestation** ties shipped binaries to cryptographic signatures and so
 - **Sign:** Produce signatures for release artifacts using **Cosign** in PATH.
 - **Verify:** Validate artifact integrity and signature trust before promotion or deployment.
 - **SBOM:** Emit machine-readable dependency inventory for vulnerability management and license review.
-- **Governance link:** Strict governance bundles may require `release_attestation_id` in **required_evidence_fields** (see `docs/governance/bundles/strict.yaml` and [Policy engine](policy-engine.md)).
+- **Governance link:** Strict governance bundles may require `release_attestation_id` in **required_evidence_fields** (see `docs/enterprise/governance/bundles/strict.yaml` and [Policy engine](policy-engine.md)).
 
 ## Flows
 
 1. **Build:** CI produces the release binary and **SBOM**; store both as immutable objects.
 2. **Sign:** Run `release-attestation sign` on the artifact; publish signature and public key material per your key management policy.
 3. **Verify:** Promotion pipelines run `verify` and fail closed on mismatch.
-4. **Governed workloads:** Attach attestation and **SBOM** references to **governance decision** records and audit templates (`docs/templates/audit-evidence-release-attestation-template.md`).
+4. **Governed workloads:** Attach attestation and **SBOM** references to **governance decision** records and audit templates (`docs/enterprise/templates/audit-evidence-release-attestation-template.md`).
 
 ## Evidence capture points
 
@@ -38,13 +38,13 @@ Release **attestation** ties shipped binaries to cryptographic signatures and so
 
 ## Compliance notes
 
-- Map to CC-09 in `docs/compliance/controls-matrix.md` and system acquisition controls in `docs/compliance/iso27001-annex-a-mapping.md`.
+- Map to CC-09 in `docs/enterprise/compliance/controls-matrix.md` and system acquisition controls in `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 - **Sigstore** / **Cosign** trust roots and key rotation are operator responsibilities; document in `docs/security-whitepaper.md`.
 
 ## Next steps
 
 - Add attestation verification to deployment playbooks: [Operations guide](operations-guide.md).
-- Archive per-release evidence using `docs/templates/audit-evidence-release-attestation-template.md`.
+- Archive per-release evidence using `docs/enterprise/templates/audit-evidence-release-attestation-template.md`.
 - Hub: [Trust Center](trust-center.md).
 
 ## CLI reference

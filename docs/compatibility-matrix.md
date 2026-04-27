@@ -56,4 +56,4 @@ Documented adapter guides (shared structure: overview, architecture, flows, evid
 - [Modal](integrations/modal-adapter-guide.md)
 - [BentoML](integrations/bentoml-adapter-guide.md)
 
-Governance baselines for **policy evaluation** are documented under `docs/governance/bundles/` with validation guidance in [Governance compliance test suite](governance/compliance-test-suite.md). Release integrity references [Release attestation](release-attestation.md) for **Cosign** / **Sigstore** and **SBOM** outputs.
+Governance baselines for **policy evaluation** are documented under `docs/enterprise/governance/bundles/` with validation guidance in [Governance compliance test suite](enterprise/governance/compliance-test-suite.md). Release integrity references [Release attestation](release-attestation.md) for **Cosign** / **Sigstore** and **SBOM** outputs.

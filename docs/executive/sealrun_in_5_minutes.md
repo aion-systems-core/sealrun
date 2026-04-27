@@ -67,4 +67,4 @@ SealRun is enterprise-ready when deterministic contract outputs remain stable, a
 
 ---
 
-**Guided link:** [Guided tour](../guided_tour.md) · [Compliance One-Pager](../compliance/sealrun_compliance_onepager.md) · [Evidence model](../evidence/evidence_model.md)
+**Guided link:** [Guided tour](../guided_tour.md) · [Compliance One-Pager](../enterprise/compliance/sealrun_compliance_onepager.md) · [Evidence model](../evidence/evidence_model.md)

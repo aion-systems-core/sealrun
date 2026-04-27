@@ -22,7 +22,7 @@ SealRun enterprise storage is **tenant-aware** and **storage-isolated**. Every *
 
 - Tenant identifier on every stored capsule and evidence record suitable for audit export.
 - CLI transcripts and JSON envelopes from `enterprise tenants *` and `enterprise tenants evidence query` for change and access records.
-- **Governance decision** and **policy evaluation** artifacts that reference `tenant_id` in required evidence fields (see [Policy engine](policy-engine.md), governance bundles under `docs/governance/bundles/`).
+- **Governance decision** and **policy evaluation** artifacts that reference `tenant_id` in required evidence fields (see [Policy engine](policy-engine.md), governance bundles under `docs/enterprise/governance/bundles/`).
 
 ## Policy enforcement points
 
@@ -38,8 +38,8 @@ SealRun enterprise storage is **tenant-aware** and **storage-isolated**. Every *
 
 ## Compliance notes
 
-- Map tenant isolation to access and confidentiality objectives in `docs/compliance/controls-matrix.md` and Annex A technological controls in `docs/compliance/iso27001-annex-a-mapping.md`.
-- Cross-tenant access attempts are covered in `docs/runbooks/incident-tenant-isolation-breach-attempt.md`.
+- Map tenant isolation to access and confidentiality objectives in `docs/enterprise/compliance/controls-matrix.md` and Annex A technological controls in `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
+- Cross-tenant access attempts are covered in `docs/enterprise/runbooks/incident-tenant-isolation-breach-attempt.md`.
 - This document does not replace host-level isolation; align with [Security guide](security-guide.md) shared responsibility.
 
 ## Next steps

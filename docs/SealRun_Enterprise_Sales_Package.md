@@ -14,6 +14,6 @@ Technical references (canonical specs content):
 
 - [`docs/os_contract_spec.md`](os_contract_spec.md)
 - [`docs/architecture.md`](architecture.md)
-- [`docs/compliance/sealrun_compliance_onepager.md`](compliance/sealrun_compliance_onepager.md)
+- [`docs/enterprise/compliance/sealrun_compliance_onepager.md`](enterprise/compliance/sealrun_compliance_onepager.md)
 
 If you maintain content, update only the canonical file in `docs/enterprise/` to avoid version drift.

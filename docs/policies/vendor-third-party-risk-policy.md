@@ -34,6 +34,6 @@ Applies to production-critical vendors, subprocessors with data processing agree
 
 ## Compliance references
 
-- `docs/compliance/controls-matrix.md` (CC-11).
-- `docs/compliance/iso27001-annex-a-mapping.md` (supplier relationships).
+- `docs/enterprise/compliance/controls-matrix.md` (CC-11).
+- `docs/enterprise/compliance/iso27001-annex-a-mapping.md` (supplier relationships).
 - Integration guides: `docs/integrations/`.

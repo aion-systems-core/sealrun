@@ -58,7 +58,7 @@ Exact CLI command gating is defined by the product; treat this table as the ente
 
 ## Compliance notes
 
-- Map to CC-01 in `docs/compliance/controls-matrix.md` and people/access themes in `docs/compliance/iso27001-annex-a-mapping.md`.
+- Map to CC-01 in `docs/enterprise/compliance/controls-matrix.md` and people/access themes in `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 - **Access control policy:** `docs/policies/access-control-policy.md`.
 
 ## Next steps

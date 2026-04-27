@@ -14,7 +14,7 @@ SealRun enterprise can export governance and capsule-related events to enterpris
 
 1. **Onboarding:** Configure sink URLs and secrets in your secret manager; run `send-test` for each **SIEM** vendor in use.
 2. **OTel validation:** Point `otel export` at a staging collector; verify attributes and resource identity before production.
-3. **Incident:** On exporter failure, follow `docs/runbooks/incident-siem-otel-exporter-failure.md`; correlate with **replay**/**drift** runbooks when symptoms overlap.
+3. **Incident:** On exporter failure, follow `docs/enterprise/runbooks/incident-siem-otel-exporter-failure.md`; correlate with **replay**/**drift** runbooks when symptoms overlap.
 4. **Audit:** Archive exporter configuration versions alongside **release attestation** and **SBOM** for the build in production (see [Release attestation](release-attestation.md)).
 
 ## Evidence capture points
@@ -37,7 +37,7 @@ SealRun enterprise can export governance and capsule-related events to enterpris
 
 ## Compliance notes
 
-- Map to CC-08 in `docs/compliance/controls-matrix.md` and communications security themes in `docs/compliance/iso27001-annex-a-mapping.md` (with [Policy engine](policy-engine.md) and [Telemetry](telemetry.md) for content classification).
+- Map to CC-08 in `docs/enterprise/compliance/controls-matrix.md` and communications security themes in `docs/enterprise/compliance/iso27001-annex-a-mapping.md` (with [Policy engine](policy-engine.md) and [Telemetry](telemetry.md) for content classification).
 - Retention of exported logs follows your platform retention policy, not SealRun alone.
 
 ## Next steps

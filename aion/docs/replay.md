@@ -1,13 +1,3 @@
-# Replay — canonical pointer
+# Moved
 
-## Overview
-
-Replay symmetry and CLI semantics are documented in the repository root.
-
-## Canonical document
-
-- **[Replay](../../docs/replay.md)**
-
-## Next steps
-
-Edit only the canonical file.
+This document moved to `[docs/internal/mirror/aion-docs/replay.md](../../docs/internal/mirror/aion-docs/replay.md)`.

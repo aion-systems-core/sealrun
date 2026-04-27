@@ -1,13 +1,3 @@
-# Compatibility matrix — canonical pointer
+# Moved
 
-## Overview
-
-Version anchors and integration references are maintained in one place to prevent drift between trees.
-
-## Canonical document
-
-- **[Compatibility matrix](../../docs/compatibility-matrix.md)**
-
-## Next steps
-
-Update only the canonical file when capsule, policy, or enterprise schema versions change.
+This document moved to `[docs/internal/mirror/aion-docs/compatibility-matrix.md](../../docs/internal/mirror/aion-docs/compatibility-matrix.md)`.

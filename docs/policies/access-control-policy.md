@@ -28,7 +28,7 @@ Applies to all personnel and automation that administer SealRun enterprise featu
 
 - Run `sealrun enterprise auth status` during shift handoffs.
 - Run `sealrun enterprise rbac export` after assignment changes; archive with access review records.
-- On suspected **tenant isolation** failure, execute `docs/runbooks/incident-tenant-isolation-breach-attempt.md`.
+- On suspected **tenant isolation** failure, execute `docs/enterprise/runbooks/incident-tenant-isolation-breach-attempt.md`.
 
 ## Evidence and monitoring
 
@@ -38,6 +38,6 @@ Applies to all personnel and automation that administer SealRun enterprise featu
 
 ## Compliance references
 
-- `docs/compliance/controls-matrix.md` (CC-01, CC-02, CC-06).
-- `docs/compliance/iso27001-annex-a-mapping.md` (people and technological controls).
+- `docs/enterprise/compliance/controls-matrix.md` (CC-01, CC-02, CC-06).
+- `docs/enterprise/compliance/iso27001-annex-a-mapping.md` (people and technological controls).
 - Hub: [Trust Center](../trust-center.md), [Security guide](../security-guide.md).

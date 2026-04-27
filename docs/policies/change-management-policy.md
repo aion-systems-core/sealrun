@@ -27,11 +27,11 @@ Covers application releases, enterprise configuration (including **RBAC** and li
 ## Evidence requirements
 
 - CI logs and test summaries.
-- Changelog entry using `docs/templates/changelog-template.md` where applicable.
+- Changelog entry using `docs/enterprise/templates/changelog-template.md` where applicable.
 - `release-attestation` sign/verify transcripts and **SBOM** storage references (non-secret).
 
 ## Compliance references
 
-- `docs/compliance/controls-matrix.md` (CC-03, CC-09).
-- `docs/compliance/iso27001-annex-a-mapping.md` (system acquisition / development).
+- `docs/enterprise/compliance/controls-matrix.md` (CC-03, CC-09).
+- `docs/enterprise/compliance/iso27001-annex-a-mapping.md` (system acquisition / development).
 - Related: `docs/operations-guide.md`, [Trust Center](../trust-center.md).

@@ -29,6 +29,6 @@ Define how incidents and high-severity requests move from intake to specialized 
 
 ## Related documents
 
-- `docs/runbooks/*.md`
+- `docs/enterprise/runbooks/*.md`
 - [Operations guide](operations-guide.md)
 - [Trust Center](trust-center.md)

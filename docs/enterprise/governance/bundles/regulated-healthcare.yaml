@@ -1,0 +1,16 @@
+# Healthcare-style bundle — requires data_classification and reviewer in evidence fields
+name: regulated-healthcare
+version: 1.0.0
+controls:
+  allowed_models:
+    - gpt-4o-mini
+  allowed_seeds:
+    - 42
+  allowed_external_calls:
+    - https://api.openai.com
+  required_evidence_fields:
+    - trace_id
+    - policy_id
+    - tenant_id
+    - data_classification
+    - reviewer

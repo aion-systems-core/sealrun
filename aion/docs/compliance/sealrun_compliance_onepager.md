@@ -1,13 +1,3 @@
-# SealRun compliance one-pager — canonical pointer
+# Moved
 
-## Overview
-
-The compliance one-pager is maintained in the root `docs/compliance/` tree.
-
-## Canonical document
-
-- **[SealRun compliance one-pager](../../../docs/compliance/sealrun_compliance_onepager.md)**
-
-## Next steps
-
-Edit only the canonical file.
+This document moved to `[docs/internal/mirror/aion-docs/enterprise/compliance/sealrun_compliance_onepager.md](../../docs/internal/mirror/aion-docs/enterprise/compliance/sealrun_compliance_onepager.md)`.

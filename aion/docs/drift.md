@@ -1,13 +1,3 @@
-# Drift — canonical pointer
+# Moved
 
-## Overview
-
-Drift semantics and contracts are documented in the repository root.
-
-## Canonical document
-
-- **[Drift](../../docs/drift.md)**
-
-## Next steps
-
-Edit only the canonical file.
+This document moved to `[docs/internal/mirror/aion-docs/drift.md](../../docs/internal/mirror/aion-docs/drift.md)`.

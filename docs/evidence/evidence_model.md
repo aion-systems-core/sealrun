@@ -53,5 +53,5 @@ This page describes how **capsules**, **hashes**, **signatures**, **replay**, an
 ## See also
 
 - [Guided tour: Evidence Model entry point](../guided_tour.md)
-- [Pilot: evidence chain walkthrough](../pilot/06_evidence_chain.md)
+- [Pilot: evidence chain walkthrough](../enterprise/pilot/06_evidence_chain.md)
 - [Governance](../governance.md) (policy / integrity profiles)

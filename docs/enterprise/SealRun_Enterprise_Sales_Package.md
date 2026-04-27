@@ -214,7 +214,7 @@ Pricing and legal terms are intentionally not hard-coded in repository docs. Use
 - [Architecture](../architecture.md)
 - [Overview](../overview.md)
 - [Guided tour](../guided_tour.md)
-- [Compliance one-pager](../compliance/sealrun_compliance_onepager.md)
+- [Compliance one-pager](../enterprise/compliance/sealrun_compliance_onepager.md)
 
 ---
 
@@ -222,4 +222,4 @@ Pricing and legal terms are intentionally not hard-coded in repository docs. Use
 
 - [OS Contract Spec](../os_contract_spec.md)
 - [Architecture](../architecture.md)
-- [Compliance one-pager](../compliance/sealrun_compliance_onepager.md)
+- [Compliance one-pager](../enterprise/compliance/sealrun_compliance_onepager.md)

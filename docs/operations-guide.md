@@ -64,7 +64,7 @@ Purge is blocked when legal hold is enabled. Operations teams should use legal h
 
 ## SRE workflows and escalation
 
-- Incident playbooks are in `docs/runbooks/`.
+- Incident playbooks are in `docs/enterprise/runbooks/`.
 - Severity handling and timing targets are in `docs/sla.md`.
 - Handoff and ownership progression are in `docs/support-escalation-path.md`.
 - Public communication format is in `docs/status-page-template.md`.
@@ -80,7 +80,7 @@ Use these when tying SRE workflows to **tenant isolation**, **RBAC**, **OIDC**, 
 - [Trust Center](trust-center.md) — consolidated capability and evidence sources
 - [Multi-tenancy](multi-tenancy.md), [Lifecycle controls](lifecycle-controls.md), [RBAC](rbac.md), [OIDC auth](oidc-auth.md)
 - [SIEM and OTel](siem-otel.md), [Release attestation](release-attestation.md), [Policy engine](policy-engine.md)
-- Runbooks: `docs/runbooks/` — replay failure, drift anomaly, evidence corruption, tenant isolation, exporter failure
+- Runbooks: `docs/enterprise/runbooks/` — replay failure, drift anomaly, evidence corruption, tenant isolation, exporter failure
 - SLA and escalation: [SLA](sla.md), [Support escalation path](support-escalation-path.md), [Status page template](status-page-template.md)
 
 ## Related

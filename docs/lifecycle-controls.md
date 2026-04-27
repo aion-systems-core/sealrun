@@ -21,7 +21,7 @@
 ## Evidence capture points
 
 - Command outputs from `lifecycle retention get|set`, `legal-hold enable|disable`, and `purge`.
-- Change tickets linking retention changes to approvers (finance / healthcare bundles may require `approver` or `reviewer` fields in policy evidence; see `docs/governance/bundles/`).
+- Change tickets linking retention changes to approvers (finance / healthcare bundles may require `approver` or `reviewer` fields in policy evidence; see `docs/enterprise/governance/bundles/`).
 - Correlation IDs and `tenant_id` in **policy evaluation** inputs where configured (see [Policy engine](policy-engine.md)).
 
 ## Policy enforcement points
@@ -33,20 +33,20 @@
 ## Integration points
 
 - **SIEM** / **OTel:** Export lifecycle-changing governance events to your SOC pipeline (see [SIEM and OTel](siem-otel.md)).
-- **Runbooks:** Evidence corruption or replay failures may interact with retention; see `docs/runbooks/`.
+- **Runbooks:** Evidence corruption or replay failures may interact with retention; see `docs/enterprise/runbooks/`.
 - **Trust Center** evidence sources for auditors: [Trust Center](trust-center.md).
 
 ## Compliance notes
 
 - Align retention and legal hold with records management and `docs/policies/change-management-policy.md`.
-- Map to controls CC-07 and related rows in `docs/compliance/controls-matrix.md`.
-- ISO 27001 mapping: operations security and incident preservation in `docs/compliance/iso27001-annex-a-mapping.md`.
+- Map to controls CC-07 and related rows in `docs/enterprise/compliance/controls-matrix.md`.
+- ISO 27001 mapping: operations security and incident preservation in `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 
 ## Next steps
 
 - Document tenant-specific retention in your CMDB and link to **replay** baselines.
 - Train operators on legal hold before purge: [Operations guide](operations-guide.md).
-- Add audit templates: `docs/templates/audit-evidence-replay-template.md`, `docs/templates/audit-evidence-drift-template.md`.
+- Add audit templates: `docs/enterprise/templates/audit-evidence-replay-template.md`, `docs/enterprise/templates/audit-evidence-drift-template.md`.
 
 ## CLI reference
 

@@ -45,21 +45,21 @@ This index lists **canonical** Markdown hubs. Prefer linking here and to the [Tr
 
 | Topic | Document |
 |--------|----------|
-| Pilot Readiness Pack index | [pilot/procurement-mini-pack.md](pilot/procurement-mini-pack.md) |
-| Success criteria | [pilot/success-criteria.md](pilot/success-criteria.md) |
-| Hands-on pilot steps | [pilot/00_install.md](pilot/00_install.md) (sequence `00`–`06`) |
+| Pilot Readiness Pack index | [enterprise/pilot/procurement-mini-pack.md](enterprise/pilot/procurement-mini-pack.md) |
+| Success criteria | [enterprise/pilot/success-criteria.md](enterprise/pilot/success-criteria.md) |
+| Hands-on pilot steps | [enterprise/pilot/00_install.md](enterprise/pilot/00_install.md) (sequence `00`–`06`) |
 
 ## Compliance, policies, runbooks
 
 | Topic | Path |
 |--------|------|
-| Controls matrix | [compliance/controls-matrix.md](compliance/controls-matrix.md) |
-| ISO Annex A mapping | [compliance/iso27001-annex-a-mapping.md](compliance/iso27001-annex-a-mapping.md) |
-| Compliance one-pager | [compliance/sealrun_compliance_onepager.md](compliance/sealrun_compliance_onepager.md) |
+| Controls matrix | [enterprise/compliance/controls-matrix.md](enterprise/compliance/controls-matrix.md) |
+| ISO Annex A mapping | [enterprise/compliance/iso27001-annex-a-mapping.md](enterprise/compliance/iso27001-annex-a-mapping.md) |
+| Compliance one-pager | [enterprise/compliance/sealrun_compliance_onepager.md](enterprise/compliance/sealrun_compliance_onepager.md) |
 | Policies | [policies/](policies/) |
-| Runbooks | [runbooks/](runbooks/) |
-| Audit templates | [templates/](templates/) |
-| Governance bundles | [governance/bundles/](governance/bundles/) |
+| Runbooks | [enterprise/runbooks/](enterprise/runbooks/) |
+| Audit templates | [enterprise/templates/](enterprise/templates/) |
+| Governance bundles | [enterprise/governance/bundles/](enterprise/governance/bundles/) |
 
 ## Integrations
 
@@ -69,6 +69,17 @@ This index lists **canonical** Markdown hubs. Prefer linking here and to the [Tr
 | LangChain | [integrations/langchain-adapter-guide.md](integrations/langchain-adapter-guide.md) |
 | Modal | [integrations/modal-adapter-guide.md](integrations/modal-adapter-guide.md) |
 | BentoML | [integrations/bentoml-adapter-guide.md](integrations/bentoml-adapter-guide.md) |
+
+## SealRun-AI
+
+| Topic | Document |
+|--------|----------|
+| AI docs hub | [ai/README.md](ai/README.md) |
+| Generator | [ai/generator.md](ai/generator.md) |
+| Runner | [ai/runner.md](ai/runner.md) |
+| Evaluator | [ai/evaluator.md](ai/evaluator.md) |
+| Fixtures | [ai/fixtures.md](ai/fixtures.md) |
+| CI | [ai/ci.md](ai/ci.md) |
 
 ## Terminology (use consistently)
 

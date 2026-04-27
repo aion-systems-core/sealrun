@@ -38,7 +38,7 @@ SealRun is an execution contract layer. Host-level isolation remains the respons
 ## Observability and detective controls
 
 - **SIEM** integrations (Splunk HEC, Datadog Logs, Elastic ingest) and **OTel** export support centralized monitoring of governance-relevant signals.
-- Map exported fields to SOC-style monitoring use cases described in `docs/compliance/controls-matrix.md`.
+- Map exported fields to SOC-style monitoring use cases described in `docs/enterprise/compliance/controls-matrix.md`.
 
 ## Supply-chain security
 
@@ -48,7 +48,7 @@ SealRun is an execution contract layer. Host-level isolation remains the respons
 
 ## Compliance alignment (non-certified)
 
-- Design references: `docs/compliance/controls-matrix.md`, `docs/compliance/iso27001-annex-a-mapping.md`.
+- Design references: `docs/enterprise/compliance/controls-matrix.md`, `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 - Policies: `docs/policies/` for access, change, incident, vendor, exceptions, and risk management.
 - This whitepaper does not replace a customer-controlled system description or formal certification package.
 
@@ -56,4 +56,4 @@ SealRun is an execution contract layer. Host-level isolation remains the respons
 
 - Read [Trust Center](trust-center.md) for the consolidated capability map.
 - Follow [Buyer guide](buyer-guide.md) for hands-on evaluation sequences.
-- Review [Operations guide](operations-guide.md) and `docs/runbooks/` for operational maturity evidence.
+- Review [Operations guide](operations-guide.md) and `docs/enterprise/runbooks/` for operational maturity evidence.

@@ -15,7 +15,7 @@
 1. **Batch inference:** Submit with fixed seed and model allow-list; collect capsule bundle at job completion.
 2. **Scheduled replay check:** Nightly job replays prior capsules; **drift** reports feed SOC dashboards via **SIEM** / **OTel** (see [SIEM and OTel](../siem-otel.md)).
 3. **Promotion:** Candidate image digest must pass `policy-api evaluate` including `allowed_external_calls` for any egress.
-4. **Failure:** Modal platform outage correlated using `docs/runbooks/incident-replay-failure.md` and exporter runbook if telemetry breaks.
+4. **Failure:** Modal platform outage correlated using `docs/enterprise/runbooks/incident-replay-failure.md` and exporter runbook if telemetry breaks.
 
 ## Evidence capture points
 
@@ -38,10 +38,10 @@
 ## Compliance notes
 
 - Modal is a subprocessor under your vendor risk process: `docs/policies/vendor-third-party-risk-policy.md`.
-- ISO mapping for supplier relationships: `docs/compliance/iso27001-annex-a-mapping.md`.
+- ISO mapping for supplier relationships: `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 
 ## Next steps
 
 - Document Modal secrets handling separately; never embed tokens in **capsule** payloads.
-- Automate policy validation in CI per `docs/governance/compliance-test-suite.md`.
+- Automate policy validation in CI per `docs/enterprise/governance/compliance-test-suite.md`.
 - Status communications: `docs/status-page-template.md` when Modal-dependent components degrade.

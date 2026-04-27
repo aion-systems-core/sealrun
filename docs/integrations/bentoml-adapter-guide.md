@@ -14,7 +14,7 @@
 
 1. **Sync inference:** Single request/response path with stable serializer; emit capsule per request or batched window per your volume policy.
 2. **Canary:** Route fraction of traffic to candidate bento; compare **drift** against baseline capsule set.
-3. **Forensics:** On **evidence** anomaly, quarantine artifacts per `docs/runbooks/incident-evidence-corruption.md` and preserve legal hold if needed (see [Lifecycle controls](../lifecycle-controls.md)).
+3. **Forensics:** On **evidence** anomaly, quarantine artifacts per `docs/enterprise/runbooks/incident-evidence-corruption.md` and preserve legal hold if needed (see [Lifecycle controls](../lifecycle-controls.md)).
 
 ## Evidence capture points
 
@@ -37,10 +37,10 @@
 ## Compliance notes
 
 - Endpoint exposure falls under access control and network zoning: `docs/policies/access-control-policy.md`, [Security guide](../security-guide.md).
-- Map monitoring controls to CC-08 in `docs/compliance/controls-matrix.md`.
+- Map monitoring controls to CC-08 in `docs/enterprise/compliance/controls-matrix.md`.
 
 ## Next steps
 
-- Add contract tests that fail closed when policy JSON drifts from approved bundles in `docs/governance/bundles/`.
-- Use `docs/templates/audit-evidence-governance-decision-template.md` for promotion reviews.
+- Add contract tests that fail closed when policy JSON drifts from approved bundles in `docs/enterprise/governance/bundles/`.
+- Use `docs/enterprise/templates/audit-evidence-governance-decision-template.md` for promotion reviews.
 - [Compatibility matrix](../compatibility-matrix.md) lists integration guide anchors for integrators.

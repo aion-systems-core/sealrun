@@ -45,15 +45,15 @@ Representative commands and outputs for audits and operational reviews:
 ## Policies, runbooks, and operations
 
 - Policies: `docs/policies/`
-- Runbooks: `docs/runbooks/` (replay, drift, evidence, tenant isolation, SIEM / OTel)
+- Runbooks: `docs/enterprise/runbooks/` (replay, drift, evidence, tenant isolation, SIEM / OTel)
 - SLA and escalation: [SLA](sla.md), [Support escalation path](support-escalation-path.md)
 - Status communications: [Status page template](status-page-template.md)
 - Day-two operations: [Operations guide](operations-guide.md)
 
 ## Compliance and procurement references
 
-- Controls matrix (design reference): `docs/compliance/controls-matrix.md`
-- ISO 27001 Annex A mapping (design reference): `docs/compliance/iso27001-annex-a-mapping.md`
+- Controls matrix (design reference): `docs/enterprise/compliance/controls-matrix.md`
+- ISO 27001 Annex A mapping (design reference): `docs/enterprise/compliance/iso27001-annex-a-mapping.md`
 - Security narrative: [Security whitepaper](security-whitepaper.md)
 - Buyer evaluation: [Buyer guide](buyer-guide.md)
 - Public roadmap: [Roadmap](roadmap-public.md)
@@ -75,6 +75,6 @@ SealRun defines deterministic contracts and enterprise storage semantics; it is 
 
 ## Next steps
 
-- Run the [Governance compliance test suite](governance/compliance-test-suite.md) against your chosen bundle.
-- Archive evidence using templates in `docs/templates/`.
+- Run the [Governance compliance test suite](enterprise/governance/compliance-test-suite.md) against your chosen bundle.
+- Archive evidence using templates in `docs/enterprise/templates/`.
 - Schedule access reviews using **RBAC** exports and **OIDC** IdP logs jointly.

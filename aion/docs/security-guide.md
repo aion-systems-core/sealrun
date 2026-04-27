@@ -1,13 +1,3 @@
-# Security guide — canonical pointer
+# Moved
 
-## Overview
-
-The **security guide** is maintained at the repository root so threat-model and enterprise terminology stay consistent.
-
-## Canonical document
-
-- **[Security guide](../../docs/security-guide.md)**
-
-## Next steps
-
-Use the canonical file for reviews; cross-link from [Trust Center](../../docs/trust-center.md).
+This document moved to `[docs/internal/mirror/aion-docs/security-guide.md](../../docs/internal/mirror/aion-docs/security-guide.md)`.

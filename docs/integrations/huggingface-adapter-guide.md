@@ -15,7 +15,7 @@ This guide describes how to wrap **Hugging Face** model inference behind SealRun
 1. **Offline batch:** Fixed dataset shard, pinned model revision, recorded seed; emit capsule + sidecar evidence.
 2. **Online service:** Request-scoped run with allow-listed external artifact fetch; deny if host not in **policy engine** `allowed_external_calls`.
 3. **Promotion:** Compare candidate capsule to golden baseline; classify **drift**; record **governance decision** before routing traffic.
-4. **Incident:** On replay failure, attach adapter config snapshot and policy JSON to the ticket (see `docs/runbooks/incident-replay-failure.md`).
+4. **Incident:** On replay failure, attach adapter config snapshot and policy JSON to the ticket (see `docs/enterprise/runbooks/incident-replay-failure.md`).
 
 ## Evidence capture points
 
@@ -38,11 +38,11 @@ This guide describes how to wrap **Hugging Face** model inference behind SealRun
 
 ## Compliance notes
 
-- Treat model weights and prompts per your data classification policy; map fields like `data_classification` for healthcare-style bundles (`docs/governance/bundles/regulated-healthcare.yaml`).
-- Controls mapping: `docs/compliance/controls-matrix.md`, Annex A: `docs/compliance/iso27001-annex-a-mapping.md`.
+- Treat model weights and prompts per your data classification policy; map fields like `data_classification` for healthcare-style bundles (`docs/enterprise/governance/bundles/regulated-healthcare.yaml`).
+- Controls mapping: `docs/enterprise/compliance/controls-matrix.md`, Annex A: `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 
 ## Next steps
 
-- Prototype evaluate/validate in CI using `docs/governance/compliance-test-suite.md`.
-- Add audit rows using `docs/templates/audit-evidence-replay-template.md` and `docs/templates/audit-evidence-governance-decision-template.md`.
+- Prototype evaluate/validate in CI using `docs/enterprise/governance/compliance-test-suite.md`.
+- Add audit rows using `docs/enterprise/templates/audit-evidence-replay-template.md` and `docs/enterprise/templates/audit-evidence-governance-decision-template.md`.
 - Read [Security guide](../security-guide.md) for Execution OS vs host isolation boundaries.

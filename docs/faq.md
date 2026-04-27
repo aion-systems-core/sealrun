@@ -58,7 +58,7 @@ The seven deterministic domains: `reliability`, `ops`, `dist`, `governance`, `ux
 
 ## Where should a CISO or compliance officer start?
 
-- [Compliance One-Pager](compliance/sealrun_compliance_onepager.md)
+- [Compliance One-Pager](enterprise/compliance/sealrun_compliance_onepager.md)
 - [Security guide](security-guide.md)
 - [Governance](governance.md)
 - [Enterprise materials](enterprise/README.md)

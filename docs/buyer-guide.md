@@ -13,8 +13,8 @@ This guide helps security, platform, and procurement teams evaluate SealRun for 
 
 ## Recommended evaluation flow
 
-1. Execute deterministic runs and **replay** on gold and edge-case **capsules**; archive outputs with `docs/templates/audit-evidence-replay-template.md`.
-2. Exercise **drift** detection between approved baselines and candidate builds; document disposition with `docs/templates/audit-evidence-drift-template.md`.
+1. Execute deterministic runs and **replay** on gold and edge-case **capsules**; archive outputs with `docs/enterprise/templates/audit-evidence-replay-template.md`.
+2. Exercise **drift** detection between approved baselines and candidate builds; document disposition with `docs/enterprise/templates/audit-evidence-drift-template.md`.
 3. Attempt negative tests for cross-tenant access; expect denials and clear logging suitable for **SIEM** correlation.
 4. Review **OIDC** login, session status, and logout; review **RBAC** assignments and exports for least privilege.
 5. Validate lifecycle controls including retention, purge, and legal hold semantics per `docs/lifecycle-controls.md`.
@@ -34,5 +34,5 @@ This guide helps security, platform, and procurement teams evaluate SealRun for 
 
 - [Trust Center](trust-center.md)
 - [Security whitepaper](security-whitepaper.md)
-- [Governance compliance test suite](governance/compliance-test-suite.md)
+- [Governance compliance test suite](enterprise/governance/compliance-test-suite.md)
 - Integration scaffolds: `docs/integrations/*.md` (also indexed in [Compatibility matrix](compatibility-matrix.md))

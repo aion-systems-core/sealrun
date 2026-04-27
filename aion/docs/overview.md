@@ -1,13 +1,3 @@
-# SealRun overview — canonical pointer
+# Moved
 
-## Overview
-
-The primary product overview and navigation map live in the root `docs/` tree.
-
-## Canonical document
-
-- **[SealRun overview](../../docs/overview.md)**
-
-## Next steps
-
-Edit only the canonical file. For a short executive narrative, see [SealRun in 5 minutes](executive/sealrun_in_5_minutes.md).
+This document moved to `[docs/internal/mirror/aion-docs/overview.md](../../docs/internal/mirror/aion-docs/overview.md)`.

@@ -37,7 +37,7 @@ SealRun enterprise authentication supports **OIDC** using the **device authoriza
 
 ## Compliance notes
 
-- Map **OIDC** controls to CC-02 in `docs/compliance/controls-matrix.md` and technological controls in `docs/compliance/iso27001-annex-a-mapping.md`.
+- Map **OIDC** controls to CC-02 in `docs/enterprise/compliance/controls-matrix.md` and technological controls in `docs/enterprise/compliance/iso27001-annex-a-mapping.md`.
 - Align with `docs/policies/access-control-policy.md` and `docs/security-guide.md` session guidance.
 
 ## Next steps

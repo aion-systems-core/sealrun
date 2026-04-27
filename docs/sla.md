@@ -22,5 +22,5 @@ Example **response and mitigation targets** for SealRun enterprise support progr
 ## Related documents
 
 - `docs/policies/incident-response-policy.md`
-- `docs/runbooks/*.md`
+- `docs/enterprise/runbooks/*.md`
 - [Trust Center](trust-center.md)

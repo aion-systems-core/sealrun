@@ -14,7 +14,7 @@ Applies to platform, security, and product leadership accountable for SealRun ad
 2. **Rating scale:** Low, Medium, High, Critical with documented criteria.
 3. **Treatment:** High and Critical risks require treatment owners and due dates; residual acceptance is explicit and signed.
 4. **Cadence:** Review the risk register quarterly and after material incidents or architecture changes.
-5. **Linkage:** Risks reference controls in `docs/compliance/controls-matrix.md` where applicable.
+5. **Linkage:** Risks reference controls in `docs/enterprise/compliance/controls-matrix.md` where applicable.
 
 ## Risk treatment options
 
@@ -32,5 +32,5 @@ Applies to platform, security, and product leadership accountable for SealRun ad
 
 ## Compliance references
 
-- `docs/compliance/iso27001-annex-a-mapping.md` (organizational controls).
+- `docs/enterprise/compliance/iso27001-annex-a-mapping.md` (organizational controls).
 - [Security whitepaper](../security-whitepaper.md) for inherent technical risk context.

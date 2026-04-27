@@ -1,13 +1,3 @@
-# Pricing — canonical pointer
+# Moved
 
-## Overview
-
-Pricing and packaging copy is maintained in the repository root.
-
-## Canonical document
-
-- **[Pricing](../../docs/pricing.md)**
-
-## Next steps
-
-Edit only the canonical file.
+This document moved to `[docs/internal/mirror/aion-docs/pricing.md](../../docs/internal/mirror/aion-docs/pricing.md)`.
