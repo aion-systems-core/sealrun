@@ -55,7 +55,7 @@ Start here: [docs/enterprise/README.md](docs/enterprise/README.md).
 
 ## Pricing
 
-Commercial packaging and support details: [docs/pricing.md](docs/pricing.md).
+Commercial packaging and support details: [docs/pricing.md](docs/pricing.md). (draft)
 
 ## Contact
 
